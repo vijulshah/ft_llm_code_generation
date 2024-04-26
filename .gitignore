@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# MS VsCode
+# vscode specific launch config files for debuging are stored in .vscode/
+# Adding this to the gitigonore since it is not handeled anywhere seperately.
+# Recommended to keep it in the file.
+.vscode/
+
+# pickled files
+*.sqsh
+*.pkl
+*.pt
+*.pth
+*.safetensors

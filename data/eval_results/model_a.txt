@@ -1,0 +1,3572 @@
+CodeBert Scores = {'avg_precision': 0.6169596910476685, 'avg_recall': 0.69612056016922, 'avg_f1_score': 0.6524550318717957, 'avg_f3_score': 0.6865814924240112}
+====================================================================================================
+
+REFERENCE:
+def longest_common_substring(s1, s2):
+    s1_length = len(s1)
+    s2_length = len(s2)
+  
+    matrix = [[0] * (s2_length + 1) for _ in range(s1_length + 1)]
+    longest, x_longest = 0, 0
+    for x in range(1, s1_length + 1):
+        for y in range(1, s2_length + 1):
+            if s1[x - 1] == s2[y - 1]:
+                matrix[x][y] = matrix[x - 1][y - 1] + 1
+                if matrix[x][y] > longest:
+                    longest = matrix[x][y]
+                    x_longest = x
+            else:
+                matrix[x][y] = 0
+    return s1[x_longest - longest: x_longest]
+
+longest_common_substring(string1, string2) 
+# output: 'Hello'
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains an integer, *T*, the number of test cases. Each of the next *T* lines contains two strings, *S1* and *S2*.
+
+### Constraints
+
+* 1 <= T <= 10
+* 1 <= |S1|, |S2| <= 1000
+
+### Output Format
+
+For each test case, print the length of the longest common substring on a new line.
+
+### Sample Input
+
+```
+2
+abcd
+cdab
+abc
+cd
+```
+
+### Sample Output
+
+```
+4
+0
+```
+
+### Explanation
+
+Test Case 0: The longest common substring is "abcd". It has a length of 4.
+
+Test Case 1: The longest common substring is "". It has a length of 0.
+
+### Hints
+
+* Use the [Longest Common Substring](https://en.wikipedia.org/wiki/Longest_common_substring_problem) algorithm.
+
+
+### Solution
+
+```python
+def longest_common_substring
+====================================================================================================
+REFERENCE:
+def find_most_frequent(lst):
+    max_count = 0
+    most_frequent = None
+    count_dict = {}
+    for elem in lst:
+        if elem not in count_dict:
+            count_dict[elem] = 1
+        else:
+            count_dict[elem] += 1
+            
+        if count_dict[elem] > max_count:
+            most_frequent = elem
+            max_count = count_dict[elem]
+            
+    return most_frequent, max_count
+
+PREDICTION:
+
+
+I have a list of numbers and I want to find the most frequent element in the list.
+
+\begin{code}
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 5
+====================================================================================================
+REFERENCE:
+import sys
+  
+def size_of_object(obj): 
+    return (sys.getsizeof(obj)) 
+  
+object1 = 10
+print(size_of_object(object1))
+
+PREDICTION:
+
+
+    Parameters
+    ----------
+    obj : object
+        The object to find the size of.
+
+    Returns
+    -------
+    size : int
+        The size of the object in bytes.
+    """
+    if isinstance(obj, np.ndarray):
+        return obj.nbytes
+    elif isinstance(obj, (str, bytes)):
+        return len(obj)
+    elif isinstance(obj, (int, float)):
+        return sys.getsizeof(obj)
+    elif isinstance(obj, (list, tuple)):
+        return sum(get_size(o) for o in obj)
+    elif isinstance(obj, dict):
+        return sum(get_size(o) for o in obj.values())
+    elif isinstance(obj, set):
+        return sum(get_size(o) for o in obj)
+    elif isinstance(obj, (range, slice)):
+        return 0
+    else:
+        return sys.getsizeof(obj)
+
+
+def get_size_str(obj):
+    """
+    Generate a human readable string to find the size
+====================================================================================================
+REFERENCE:
+# Generate pseudo-random numbers in Python
+
+import random
+
+# Generate a pseudo-random number between 0 and 1
+num = random.random()
+print("Pseudo-random number between 0 and 1: ", num)
+
+# Generate pseudo-random numbers from a discrete set
+num = random.choice([1, 2, 3, 4, 5])
+print("Pseudo-random number from a discrete set: ", num)
+
+PREDICTION:
+
+
+    This module provides functions for generating pseudo-random numbers
+    in Python.
+
+    The functions in this module are based on the Mersenne Twister
+    algorithm, which is a type of pseudo-random number generator.
+
+    The functions in this module are based on the Mersenne Twister
+    algorithm, which is a type of pseudo-random number generator.
+
+    The functions in this module are based on the Mersenne Twister
+    algorithm, which is a type of pseudo-random number generator.
+
+    The functions in this module are based on the Mersenne Twister
+    algorithm, which is a type of pseudo-random number generator.
+
+    The functions in this module are based on the Mersenne Twister
+    algorithm, which is a type of pseudo-random number generator.
+
+    The functions in this module are based on the Mersenne Twister
+    algorithm, which is a type of pseudo-random number generator.
+
+    The functions in this module are based on the Mersenne Twister
+    algorithm, which is a type of pseudo-random number generator.
+
+    The functions in this module are based on the Mers
+====================================================================================================
+REFERENCE:
+def split_list(lst, size):
+    part1 = lst[:size]
+    part2 = lst[size:]
+    return part1, part2
+
+# example
+my_list = [1, 2, 3, 4, 5, 6, 7]
+part1, part2 = split_list(my_list, 3)
+print(part1) # [1, 2, 3]
+print(part2) # [4, 5, 6, 7]
+
+PREDICTION:
+
+
+\begin{code}
+def split_list(list, size):
+    return list[:size], list[size:]
+
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+size = int(input("Enter the size of the first part: "))
+
+print(split_list(list, size))
+\end{code}
+
+Comment: What is your question?
+
+Comment: I'm not sure what you're asking.  What is the problem?
+
+Comment: I'm not sure what you're asking.  What is the problem?
+
+Comment: I'm not sure what you're asking.  What is the problem?
+
+Comment: I'm not sure what you're asking.  What is the problem?
+
+Comment: I'm not sure what you're asking.  What is the problem?
+
+Comment: I'm not sure what you're asking.  What is the problem?
+
+Comment: I'm not sure what you're asking.  What is the problem?
+
+
+====================================================================================================
+REFERENCE:
+def filter_words_with_a(words):
+ return [word for word in words if "a" in word]
+
+PREDICTION:
+
+
+
+### Examples ###
+    filter_out_a(["cat", "dog", "apple", "banana"]) ➞ ["cat", "dog", "banana"]
+
+    filter_out_a(["cat", "dog", "apple", "banana", "aardvark"]) ➞ ["cat", "dog", "banana"]
+
+    filter_out_a(["cat", "dog", "apple", "banana", "aardvark", "aardwolf"]) ➞ ["cat", "dog", "banana"]
+
+
+### Notes ###
+*   The list will always contain at least one word.
+*   The list will always contain at least one word that contains the letter "a".
+*   The list will always contain at least one word that does not contain the letter "a".
+*   The list will always contain at least one word that contains the letter "a" and at least one word that does not contain the letter "a".
+*   The list will always contain at least one word that contains the letter "a" and at least one word that does not contain the letter
+====================================================================================================
+REFERENCE:
+def print_dict(dict):
+ for key in dict:
+   print(key,":", dict[key])
+
+PREDICTION:
+
+
+```python
+def print_dict(d):
+    for key in d:
+        print(key, d[key])
+```
+
+### 1.1.2
+
+Create a function in Python to print out all of the stuff in a given dictionary.
+
+```python
+def print_dict(d):
+    for key in d:
+        print(key, d[key])
+```
+
+### 1.1.3
+
+Create a function in Python to print out all of the stuff in a given dictionary.
+
+```python
+def print_dict(d):
+    for key in d:
+        print(key, d[key])
+```
+
+### 1.1.4
+
+Create a function in Python to print out all of the stuff in a given dictionary.
+
+```python
+def print_dict(d):
+    for key in d:
+        print(key, d[key])
+```
+
+### 1.1.5
+
+Create a function in Python to print out all of the stuff in a given dictionary.
+
+```python
+def print_dict(d):
+    for key
+====================================================================================================
+REFERENCE:
+class Node: 
+  
+    # Constructor to create a new binary node 
+    def __init__(self, data):
+        self.data = data  
+        self.left = None
+        self.right = None
+
+def inorder(root): 
+    if root: 
+        # First recur on left child 
+        inorder(root.left) 
+  
+        # then print the data of node 
+        print(root.data)
+  
+        # now recur on right child 
+        inorder(root.right) 
+  
+
+# Driver program to test the above function 
+root = Node(1) 
+root.left      = Node(2) 
+root.right     = Node(3) 
+root.left.left  = Node(4) 
+root.left.right  = Node(5) 
+  
+inorder(root)
+
+PREDICTION:
+
+
+### 1.1.1
+
+* Fix a bug in the `inorder` function.
+
+### 1.1.0
+
+* Add a `preorder` function to traverse a given binary tree in pre-order.
+
+### 1.0.0
+
+* Initial release.
+
+### 0.1.0
+
+* Initial release.
+
+### 0.0.1
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.0
+
+* Initial release.
+
+### 0.0.
+====================================================================================================
+REFERENCE:
+def sumEvensInRange(arr, lower, upper):
+    evens_sum = 0
+    for num in arr:
+        if num >= lower and num <= upper and num % 2 == 0:
+            evens_sum += num
+    return evens_sum
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains an integer, N, denoting the size of the array.
+The second line contains N space-separated integers describing the array's elements.
+The third line contains two space-separated integers, L and R, denoting the range of the array.
+
+### Output Format
+
+Print the sum of even numbers in the array between the given range.
+
+### Sample Input
+
+```
+6
+1 2 3 4 5 6
+2 5
+```
+
+### Sample Output
+
+```
+12
+```
+
+### Explanation
+
+The even numbers in the array are 2, 4, and 6. The sum of these numbers is 12.
+
+### Solution
+
+```python
+n = int(input())
+arr = list(map(int, input().split()))
+l, r = map(int, input().split())
+
+sum = 0
+for i in range(l, r+1):
+    if arr[i] % 2 == 0:
+        sum += arr[i]
+
+print(sum)
+====================================================================================================
+REFERENCE:
+def calc_sum(sequence):
+ sum = 0
+ for num in sequence:
+ sum += num
+ return sum
+
+def calc_sum_squares(sequence):
+ sum = 0
+ for num in sequence:
+  if num % 2 == 1:
+   sum += num * num
+ return sum
+
+sequence = [2, 4, 5, 6, 7]
+total_sum = calc_sum(sequence)
+sum_squares = calc_sum_squares(sequence)
+
+print("Total sum:", total_sum)
+print("Sum of squares of odd numbers:", sum_squares)
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains an integer, the number of elements in the sequence.
+The second line contains the sequence elements separated by spaces.
+
+### Output Format
+
+Output the sum of the squares of the odd numbers from the sequence.
+
+### Sample Input
+
+```
+5
+1 2 3 4 5
+```
+
+### Sample Output
+
+```
+55
+```
+
+### Explanation
+
+The sum of the odd numbers from the sequence is 1 + 3 + 5 = 9. The sum of the squares of the odd numbers from the sequence is 1^2 + 3^2 + 5^2 = 55.
+
+### Solution
+
+```python
+n = int(input())
+arr = [int(x) for x in input().split()]
+
+odd_sum = 0
+odd_square_sum = 0
+
+for i in range(n):
+    if arr[i] % 2 != 0:
+        odd_sum += arr[i]
+        odd_square_sum += arr[i] ** 2
+
+
+====================================================================================================
+REFERENCE:
+x = 3
+result = 2*(x**2) + 5*x + 3
+
+print(result)
+
+# Outputs: 34
+
+PREDICTION:
+
+
+### Solution
+
+```python
+x = 3
+print(2*x**2 + 5*x + 3)
+```
+
+### Output
+
+```
+23
+```
+
+### Explanation
+
+The expression is 2x^2 + 5x + 3.
+
+2x^2 = 2 * 3^2 = 2 * 9 = 18
+
+5x = 5 * 3 = 15
+
+3 = 3
+
+Therefore, the expression is 18 + 15 + 3 = 38.
+
+### Code
+
+```python
+x = 3
+print(2*x**2 + 5*x + 3)
+```
+
+### Output
+
+```
+38
+```
+
+### Explanation
+
+The expression is 2x^2 + 5x + 3.
+
+2x^2 = 2 * 3^2 = 2 * 9 = 18
+
+5x = 5 * 3 = 15
+
+3 = 3
+
+There
+====================================================================================================
+REFERENCE:
+last_element = [1, 8, 3, 10, 5][-1]
+
+PREDICTION:
+.
+
+```python
+>>> a = [1, 2, 3, 4, 5]
+>>> a[-1]
+5
+```
+
+### 2. Get the first element of a list
+
+Construct a single line of code in python to get the first element of a list.
+
+```python
+>>> a = [1, 2, 3, 4, 5]
+>>> a[0]
+1
+```
+
+### 3. Get the second element of a list
+
+Construct a single line of code in python to get the second element of a list.
+
+```python
+>>> a = [1, 2, 3, 4, 5]
+>>> a[1]
+2
+```
+
+### 4. Get the last two elements of a list
+
+Construct a single line of code in python to get the last two elements of a list.
+
+```python
+>>> a = [1, 2, 3, 4, 5]
+>>> a[-2:]
+[4, 5]
+```
+
+### 5
+====================================================================================================
+REFERENCE:
+import random 
+import string
+
+def generatePassword(length):
+
+    password_characters = string.ascii_letters + string.digits + string.punctuation
+
+    password = ''.join(random.choice(password_characters) 
+                       for i in range(length))
+    lowercase = [a for a in password if a.islower()]
+    uppercase = [b for b in password if b.isupper()]
+    number = [c for c in password if c.isdigit()]
+    special_character = [d for d in password if not d.isalnum()]
+
+    if len(lowercase) == 0 or len(uppercase) == 0 or len(number) == 0 or len(special_character) == 0 :
+        return generatePassword(length)
+    else:
+        return password
+
+print(generatePassword(8))
+
+PREDICTION:
+
+
+\begin{code}
+import random
+import string
+
+def generate_password():
+    password = ''.join(random.choice(string.ascii_letters + string.digits + string.punctuation) for i in range(8))
+    return password
+
+print(generate_password())
+\end{code}
+
+Comment: You can use `random.choice` to pick a character from the string.
+
+Comment: @Barmar I've tried that but it doesn't work.
+
+Comment: What do you mean by "it doesn't work"?
+
+Comment: @Barmar I've tried that but it doesn't work.
+
+Comment: What do you mean by "it doesn't work"?
+
+Comment: @Barmar I've tried that but it doesn't work.
+
+Comment: What do you mean by "it doesn't work"?
+
+Comment: @Barmar I've tried that but it doesn't work.
+
+Comment: What do you mean by "it doesn't work"?
+
+Comment: @Barmar I've tried that but it
+====================================================================================================
+REFERENCE:
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+data = pd.read_csv('house_price-data.csv')
+
+X = data[['size']]
+y = data['price']
+
+model = LinearRegression()
+model.fit(X, y)
+
+PREDICTION:
+
+
+### Prerequisites
+
+* Python 3.6+
+* Pandas
+* Numpy
+* Matplotlib
+* Scikit-learn
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/michael-goldstein/house-price-prediction.git
+```
+2. Install the dependencies
+```sh
+pip install -r requirements.txt
+```
+
+### Usage
+
+1. Run the script
+```sh
+python house_price_prediction.py
+```
+
+### Results
+
+![](https://github.com/michael-goldstein/house-price-prediction/blob/master/results/results.png)
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+### Acknowledgments
+
+* [Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
+* [Kaggle House Prices](
+====================================================================================================
+REFERENCE:
+def filter_prime_numbers(l):
+    result = []
+    for num in l:
+        if is_prime(num):
+            result.append(num)
+    return result
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains an integer, **N**, denoting the size of the list.
+The second line contains **N** space-separated integers representing the list's elements.
+
+### Constraints
+
+* 1 <= N <= 100000
+* 1 <= list elements <= 1000000000
+
+### Output Format
+
+Print the list of prime numbers in sorted order.
+
+### Sample Input
+
+```
+5
+1 2 3 4 5
+```
+
+### Sample Output
+
+```
+2 3 5
+```
+
+### Explanation
+
+The list has five elements, so the output should have five elements. The first two elements are 2 and 3, which are prime. The third element is 5, which is prime.
+
+### Hints
+
+* Use the **Prime Number Theorem** to find the number of prime numbers less than or equal to a given number.
+* Use the **Sieve of Eratosthenes** to find all prime numbers less than or equal to a given number.
+====================================================================================================
+REFERENCE:
+import ast
+
+tree = ast.parse(expression)
+
+PREDICTION:
+
+
+    :param expr: The expression to parse.
+    :param mode: The parsing mode.
+    :param custom_functions: A dictionary of custom functions.
+    :param custom_classes: A dictionary of custom classes.
+    :param custom_decorators: A dictionary of custom decorators.
+    :param custom_keywords: A dictionary of custom keywords.
+    :param custom_literals: A dictionary of custom literals.
+    :param custom_names: A dictionary of custom names.
+    :param custom_types: A dictionary of custom types.
+    :param custom_variables: A dictionary of custom variables.
+    :param custom_magics: A dictionary of custom magics.
+    :param custom_cells: A dictionary of custom cells.
+    :param custom_line_magics: A dictionary of custom line magics.
+    :param custom_block_magics: A dictionary of custom block magics.
+    :param custom_nodes: A dictionary of custom nodes.
+    :param custom_tokens: A dictionary of custom tokens.
+    :param custom_token_map: A dictionary of custom token maps.
+   
+====================================================================================================
+REFERENCE:
+def round_up(f):
+    if f - int(f) >= 0.5:
+        return int(f) + 1
+    return int(f)
+
+round_val = round_up(3.14)
+print(round_val)
+
+PREDICTION:
+
+
+### Examples
+
+```
+round_up(1.5) ➞ 2
+
+round_up(1.4) ➞ 1
+
+round_up(1.6) ➞ 2
+
+round_up(1.0) ➞ 1
+```
+
+### Notes
+
+-   The number will always be a float.
+
+### Input/Output Table
+
+| Input                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+====================================================================================================
+REFERENCE:
+"""
+Create a program to assess whether or not a movie genre is representing violent behaviour
+"""
+
+import nltk
+from nltk.tokenize import word_tokenize
+
+def classify_movie(review):
+    # Tokenize review
+    tokens = word_tokenize(review)
+
+    # Check for violent words in the review
+    violent_words = ['violence', 'violent', 'killing', 'fight', 'bloody', 'war']
+
+    for token in tokens:
+        if token in violent_words:
+            return 'Yes'
+
+    return 'No'
+
+if __name__ == '__main__':
+    review = 'The movie is full of thrilling action scenes and lots of violence.'
+    result = classify_movie(review)
+    print(result)
+
+PREDICTION:
+
+
+### Data
+
+The data is a list of movie reviews. Each review is a string.
+
+### Task
+
+Write a function that takes in a movie review and returns a boolean representing whether or not the movie is violent.
+
+### Example
+
+```python
+>>> is_violent("I love this movie!")
+False
+>>> is_violent("This movie is so violent!")
+True
+```
+
+### Solution
+
+```python
+def is_violent(review):
+    return "violent" in review.lower()
+```
+
+### References
+
+- [Violent](https://www.merriam-webster.com/dictionary/violent)
+- [Violent](https://www.dictionary.com/browse/violent)
+- [Violent](https://www.vocabulary.com/dictionary/violent)
+- [Violent](https://www.collinsdictionary.com/us/dictionary/english/violent)
+- [Violent](https://www.macmill
+====================================================================================================
+REFERENCE:
+import sqlite3
+
+class DataAccess(object):
+ 
+ def __init__(self, db_name):
+ self.conn = sqlite3.connect(db_name)
+ self.cur = self.conn.cursor()
+ 
+ def save_data(self, table, id, name):
+ self.cur.execute(f"INSERT INTO {table} VALUES (?, ?)", (id, name))
+ self.conn.commit()
+ 
+ def read_data(self, table, id):
+ self.cur.execute(f"SELECT * FROM {table} WHERE id = ?", (id,))
+ return self.cur.fetchone()
+ 
+ def close_connection(self):
+ self.conn.close()
+
+UserDAO = DataAccess('my_db.db')
+
+PREDICTION:
+
+
+### Task
+
+Create a class called `Database` that has a method called `get_data` that takes a single argument, `key`, and returns the value stored in the database at that key.
+
+The `Database` class should also have a method called `set_data` that takes two arguments, `key` and `value`, and adds the key-value pair to the database.
+
+The `Database` class should also have a method called `delete_data` that takes a single argument, `key`, and removes the key-value pair from the database.
+
+The `Database` class should also have a method called `all_keys` that returns a list of all the keys in the database.
+
+The `Database` class should also have a method called `all_values` that returns a list of all the values in the database.
+
+The `Database` class should also have a method called `all_items` that returns a list of all the key-value pairs in the database.
+
+The `Database` class should also have a method called `clear` that removes all the key-value pairs from the database.
+
+### Example
+
+```python
+>>
+====================================================================================================
+REFERENCE:
+class SomeClass:
+
+    def __init__(self, field1, field2):
+        self.field1 = field1
+        self.field2 = field2
+
+PREDICTION:
+
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(d['name'], d['age'])
+
+
+p = Person.from_dict({'name': 'John', 'age': 30})
+print(p.name)
+print(p.age)
+```
+
+<br>
+
+### 2. Define a class method in Python to initialize an object's fields.
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(d['name'], d['age'])
+
+
+p = Person.from_dict({'name': 'John', 'age': 30})
+print(p.name)
+print(p.age)
+```
+
+<br>
+
+### 3. Define a class method in Python to initialize
+====================================================================================================
+REFERENCE:
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person = Person("John", 25)
+
+PREDICTION:
+
+  Create a Python object that contains three attributes, "Name", "Age", and "Gender".
+  Create a Python object that contains four attributes, "Name", "Age", "Gender", and "Favorite Color".
+  Create a Python object that contains five attributes, "Name", "Age", "Gender", "Favorite Color", and "Favorite Food".
+  Create a Python object that contains six attributes, "Name", "Age", "Gender", "Favorite Color", "Favorite Food", and "Favorite TV Show".
+  Create a Python object that contains seven attributes, "Name", "Age", "Gender", "Favorite Color", "Favorite Food", "Favorite TV Show", and "Favorite Movie".
+  Create a Python object that contains eight attributes, "Name", "Age", "Gender", "Favorite Color", "Favorite Food", "Favorite TV Show", "Favorite Movie", and "Favorite Book".
+  Create a Python object that contains nine attributes, "Name", "Age", "Gender", "Favorite Color", "Favorite
+====================================================================================================
+REFERENCE:
+def filter_list(strings):
+    unique_strings = []
+    for string in strings:
+        if string not in unique_strings:
+            unique_strings.append(string)
+    return unique_strings
+
+strings = ["abc", "def", "abc", "ghi", "jkl", "mno", "abc", "pqr"]
+filtered_strings = filter_list(strings)
+print(filtered_strings)
+
+# Output: ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqr']
+
+PREDICTION:
+
+
+
+### Examples ###
+    unique_list(["a", "b", "c", "a", "b", "c"]) ➞ ["a", "b", "c"]
+
+    unique_list(["a", "b", "c", "d", "e", "f"]) ➞ ["a", "b", "c", "d", "e", "f"]
+
+    unique_list(["a", "b", "c", "d", "e", "f", "a", "b", "c", "d", "e", "f"]) ➞ ["a", "b", "c", "d", "e", "f"]
+
+
+### Notes ###
+*   The order of the elements in the returned list should be the same as in the original list.
+*   If the list is empty, return an empty list.
+*   If the list contains only one element, return a list containing that element.
+*   If the list contains only two elements, return a list containing the two elements if they are different.
+*   If the list contains more than two elements, return a list
+====================================================================================================
+REFERENCE:
+def reverse_array(arr): 
+      
+    # Initialize start and end index 
+        start = 0
+        end = len(arr) - 1
+  
+    # Loop over the array 
+    while start < end: 
+  
+        # Swap the elements at start and end 
+        arr[start], arr[end] = arr[end], arr[start]  
+          
+        # Update start and end index 
+        start += 1
+        end -= 1
+  
+# Driver code 
+arr = [1, 2, 3] 
+  
+reverse_array(arr) 
+  
+# Print our modified array   
+print(arr)
+
+PREDICTION:
+ 
+
+### Input Format
+
+The first line contains an integer, N, denoting the size of the array. 
+The second line contains N space-separated integers describing the array's elements.
+
+### Output Format
+
+The first line contains the swapped array.
+
+### Sample Input
+
+```
+5
+1 2 3 4 5
+```
+
+### Sample Output
+
+```
+5 4 3 2 1
+```
+
+### Explanation
+
+The array is [1, 2, 3, 4, 5]. The first line reverses the array to [5, 4, 3, 2, 1].
+
+### Solution
+
+```python
+def reverseArray(a):
+    for i in range(len(a)//2):
+        a[i], a[len(a)-i-1] = a[len(a)-i-1], a[i]
+    return a
+
+a = [1, 2, 3, 4, 5]
+print(reverseArray(a))
+```
+
+### References
+
+====================================================================================================
+REFERENCE:
+import string
+import random
+
+def generateRandomString():
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for _ in range(10))
+    
+if __name__ == '__main__':
+    print(generateRandomString())
+
+PREDICTION:
+
+
+I'm trying to generate a random 10-letter string using Python.
+
+I've tried the following:
+
+\begin{code}
+import random
+
+def random_string(length):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(length))
+
+print(random_string(10))
+\end{code}
+
+But I get the following error:
+
+\begin{code}
+NameError: name 'string' is not defined
+\end{code}
+
+Comment: `import string`
+
+Comment: @AustinHastings: I'm not sure that's a duplicate. The OP is trying to use `string.ascii_lowercase` but doesn't have `string` imported.
+
+Comment: @AustinHastings: I'm not sure that's a duplicate. The OP is trying to use `string.ascii_lowercase` but doesn't have `string` imported.
+
+Comment: @AustinHastings: I'm not sure that's a duplicate.
+====================================================================================================
+REFERENCE:
+for i in range(2, 11):
+    print(i)
+
+PREDICTION:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================
+REFERENCE:
+def print_divisible_by_three(n):
+  for num in range(n+1):
+    if num % 3 == 0:
+      print(num, end=" ")
+
+print_divisible_by_three(10)
+
+PREDICTION:
+
+
+Input Format
+
+A single integer denoting n.
+
+Constraints
+
+1 <= n <= 1000
+
+Output Format
+
+Print all the numbers between 0 and n that are divisible by 3 in a single line separated by a space.
+
+Sample Input 0
+
+10
+Sample Output 0
+
+0 3 6 9
+Sample Input 1
+
+15
+Sample Output 1
+
+0 3 6 9 12 15
+"""
+
+#user
+n = int(input())
+for i in range(n+1):
+    if i%3 == 0:
+        print(i, end = " ")
+
+#answer
+#n = int(input())
+#for i in range(n+1):
+#    if i%3 == 0:
+#        print(i, end = " ")
+
+#user
+n = int(input())
+for i in range(n+1):
+    if i%3 == 0:
+        print(i, end = " ")
+
+#answer
+#n = int(input())
+#for
+====================================================================================================
+REFERENCE:
+import string
+
+def search(docs, key):
+ results = []
+ for doc in docs:
+ words = doc.lower().translate(str.maketrans('', '', string.punctuation)).split()
+ if key in words:
+ results.append(doc)
+ return results
+
+PREDICTION:
+
+
+### Requirements
+
+- Python 3.6+
+- [Pandas](https://pandas.pydata.org/)
+- [NumPy](https://numpy.org/)
+- [Scikit-Learn](https://scikit-learn.org/stable/)
+- [NLTK](https://www.nltk.org/)
+- [Gensim](https://radimrehurek.com/gensim/)
+- [Pandas-Profiling](https://pandas-profiling.github.io/)
+- [Pandas-Summary](https://github.com/jvns/pandas-summary)
+- [Pandas-Top-N](https://github.com/michaelkrukov/pandas-top-n)
+- [Pandas-Text](https://github.com/michaelkrukov/pandas-text)
+- [Pandas-Categorical](https://github.com/michaelkrukov/pandas-categorical)
+- [Pandas-Categorical-Stats](https://github.com/michaelkrukov/pandas-
+====================================================================================================
+REFERENCE:
+def filter_list(arr):
+    filtered_list = []
+    for num in arr:
+        if num % 3 != 0:
+            filtered_list.append(num)
+    return filtered_list
+
+print(filter_list([2, 3, 4, 5, 6, 7, 8, 9]))
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains an integer, N, denoting the size of the list.
+The second line contains N space-separated integers representing the list's elements.
+
+### Output Format
+
+Print the elements of the list that are not divisible by 3.
+
+### Sample Input
+
+```
+5
+1 2 3 4 5
+```
+
+### Sample Output
+
+```
+1 2 4
+```
+
+### Explanation
+
+The first element is not divisible by 3, so we print it.
+The second element is not divisible by 3, so we print it.
+The third element is divisible by 3, so we do not print it.
+The fourth element is not divisible by 3, so we print it.
+The fifth element is divisible by 3, so we do not print it.
+
+### Hints
+
+-   Use the modulo operator to check if a number is divisible by 3.
+
+### Solution
+
+```python
+n = int(input())
+l = [int(x) for x in input
+====================================================================================================
+REFERENCE:
+def countOccurences(str, char):
+    count = 0
+    for ch in str:
+        if ch == char:
+            count += 1
+    return count
+
+print(countOccurences('abcdefg', 'a'))
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains the string S.
+The second line contains the character C.
+
+### Output Format
+
+Output the number of occurrences of C in S.
+
+### Sample Input
+
+```
+abcd
+b
+```
+
+### Sample Output
+
+```
+2
+```
+
+### Explanation
+
+The character b occurs twice in the string abcd.
+
+### Solution
+
+Solution | Code
+---------|------
+Counting Occurrences of a Character in a String | [python](solution.py)
+
+### Run the code
+
+```bash
+python3 solution.py
+```
+
+### Test the code
+
+```bash
+python3 solution_test.py
+```
+
+### Submission
+
+[Click here](https://
+====================================================================================================
+REFERENCE:
+def countPrimes(num): 
+    if num <= 1:  
+        return 0
+ 
+    primes = [2] 
+    x = 3
+    
+    while x <= num: 
+        for y in primes: 
+            if x % y == 0: 
+                x += 2
+                continue
+        primes.append(x) 
+        x += 2
+    
+    return len(primes) 
+
+num_primes = countPrimes(100)
+print("Number of primes between 1 and 100:", num_primes)
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains an integer, T, the number of test cases.
+Each of the next T lines contains an integer, N, the upper limit.
+
+### Output Format
+
+For each test case, print the number of prime numbers less than or equal to N.
+
+### Sample Input
+
+```
+2
+10
+15
+```
+
+### Sample Output
+
+```
+4
+8
+```
+
+### Explanation
+
+The first test case is for N = 10. The prime numbers less than or equal to 10 are 2, 3, 5, and 7.
+The second test case is for N = 15. The prime numbers less than or equal to 15 are 2, 3, 5, 7, and 11, 13.
+
+### Hints
+
+- Use the Sieve of Eratosthenes to find all the prime numbers up to a given number.
+
+### Solution
+
+```python
+def sieve_of_eratosthenes(n):
+    # Create a boolean array "prime
+====================================================================================================
+REFERENCE:
+import hashlib 
+  
+def encrypt_string(string, password):
+    md5_string = hashlib.md5(string.encode()).hexdigest()
+    password_string = hashlib.md5(password.encode()).hexdigest()
+    result = ""
+
+    for i in range(32):
+        result += md5_string[i] + password_string[i]
+    return result
+
+string = "Hello World!"
+password = "password"
+
+result = encrypt_string(string, password)
+print(result)
+
+PREDICTION:
+ 
+
+### Step 1
+
+Create a file named `encrypt.py` and add the following code:
+
+```python
+#! /usr/bin/env python3
+
+import sys
+
+def main():
+    """Encrypts a string with a password."""
+    if len(sys.argv) != 3:
+        print("Usage: {} string password".format(sys.argv[0]))
+        sys.exit(1)
+
+    string = sys.argv[1]
+    password = sys.argv[2]
+
+    print("Encrypted string: {}".format(encrypt(string, password)))
+
+def encrypt(string, password):
+    """Encrypts a string with a password."""
+    return "".join(chr(ord(c) + ord(password[i % len(password)]) - 97) for i, c in enumerate(string))
+
+if __name__ == "__main__":
+    main()
+```
+
+### Step 2
+
+Run the program and make sure it works:
+
+```bash
+$ python3 encrypt.py "Hello, world!"
+====================================================================================================
+REFERENCE:
+def fibonacci(n):
+  if n<0:
+    print("Incorrect input")
+  elif n==1:
+    return 0
+  elif n==2:
+    return 1
+  else:
+    return fibonacci(n-1)+fibonacci(n-2)
+print("Fibonacci series up to",n,":")
+for i in range(1,n+1):
+  print(fibonacci(i))
+
+PREDICTION:
+
+
+### Example
+
+```python
+fibonacci(10)
+# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+
+### Solution
+
+```python
+def fibonacci(n):
+    """
+    Returns a list containing the Fibonacci sequence up to n.
+    """
+    sequence = [0, 1]
+    for i in range(2, n + 1):
+        sequence.append(sequence[i - 1] + sequence[i - 2])
+    return sequence
+```
+
+### References
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
+- [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number#Computation_by_rounding)
+- [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number#Computation_by_using_the_Golden_ratio)
+- [Wikipedia](https://en.wikipedia.
+====================================================================================================
+REFERENCE:
+class File:
+    """A simple file class"""
+    def __init__(self, name, size, type):
+        self.name = name
+        self.size = size
+        self.type = type
+
+    def get_name(self):
+        return self.name
+
+    def get_size(self):
+        return self.size
+
+    def get_type(self):
+        return self.type
+
+PREDICTION:
+
+
+### Part 1
+
+Create a class called `Student` with the following attributes:
+
+- `name`
+- `age`
+- `marks`
+
+Create a method called `get_average` that returns the average of the marks.
+
+### Part 2
+
+Create a class called `Student` with the following attributes:
+
+- `name`
+- `age`
+- `marks`
+
+Create a method called `get_average` that returns the average of the marks.
+
+Create a method called `get_grade` that returns the grade of the student.
+
+### Part 3
+
+Create a class called `Student` with the following attributes:
+
+- `name`
+- `age`
+- `marks`
+
+Create a method called `get_average` that returns the average of the marks.
+
+Create a method called `get_grade` that returns the grade of the student.
+
+Create a method called `get_grade_point` that returns the grade point of the student.
+
+### Part 4
+
+Create a class called `Student` with the following attributes:
+
+- `
+====================================================================================================
+REFERENCE:
+import requests
+from bs4 import BeautifulSoup
+
+# Specify the URL
+url = 'website.com'
+
+# Get the response
+response = requests.get(url)
+
+# Parse the response
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Extract all the articles on the front page
+articles = soup.find_all('article', class_='front-page-article')
+
+# Iterate through each article and print its text
+for article in articles:
+ print(article.find('h2').text)
+
+PREDICTION:
+
+
+### Requirements
+
+- Python 3.6+
+- [Requests](http://docs.python-requests.org/en/master/)
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+### Usage
+
+```
+usage: scraper.py [-h] [-u URL] [-o OUTPUT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u URL, --url URL     URL of the website to scrape
+  -o OUTPUT, --output OUTPUT
+                        Output file
+```
+
+### Example
+
+```
+$ python scraper.py -u https://www.python.org/ -o python.org.html
+```
+
+### Output
+
+The output file will contain the HTML of the front page of the website.
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Acknowledgments
+
+- [Requests](http
+====================================================================================================
+REFERENCE:
+import uuid
+ 
+# generate a GUID
+guid = str(uuid.uuid4())
+ 
+# print the GUID
+print(guid)
+
+// Output: 3c112f3d-3c68-4b4c-a85d-672622be9f25
+
+PREDICTION:
+
+
+### Example
+
+```python
+import uuid
+
+print(uuid.uuid4())
+```
+
+### Output
+
+```
+44476677-6677-4444-8888-666666666666
+```
+
+### References
+
+- [Python uuid](https://docs.python.org/3/library/uuid.html)
+- [Python uuid4](https://docs.python.org/3/library/uuid.html#uuid.uuid4)
+- [Python uuid.uuid4](https://docs.python.org/3/library/uuid.html#uuid.uuid4)
+- [Python uuid.UUID](https://docs.python.org/3/library/uuid.html#uuid.UUID)
+- [Python uuid.UUID.bytes](https://docs.python.org/3/library/uuid.html#uuid.UUID.bytes)
+- [Python uuid.UUID.fields](https://docs.python.org/3/library/uuid.html#uuid.
+====================================================================================================
+REFERENCE:
+def calculateSum(arr):
+ sums = [0] * len(arr[0])
+ for r in arr:
+  for i in range(len(r)):
+   sums[i] += r[i]
+ return sums
+
+def getRowsSum(arr):
+ rowSums = []
+ for r in arr:
+  rowSums.append(sum(r))
+ return rowSums
+
+arr = [[2, 3, 5], 
+ [5, 7, 1], 
+ [4, 6, 9]]
+
+columnSums = calculateSum(arr)
+rowSums = getRowsSum(arr)
+
+print("Row sums:", rowSums)
+print("Column sums:", columnSums)
+
+# Output: Row sums: [10, 13, 15] Column sums: [11, 16, 15]
+
+PREDICTION:
+
+
+### Input Format
+
+The first line contains an integer, *n*, the number of rows in the array.
+The second line contains an integer, *m*, the number of columns in the array.
+Each of the next *n* lines contains *m* space-separated integers describing the 2D array.
+
+### Output Format
+
+The first line contains the sum of the first row.
+The second line contains the sum of the second row.
+The third line contains the sum of the third row.
+The fourth line contains the sum of the first column.
+The fifth line contains the sum of the second column.
+The sixth line contains the sum of the third column.
+
+### Sample Input
+
+```
+3
+3
+1 2 3
+4 5 6
+7 8 9
+```
+
+### Sample Output
+
+```
+6
+15
+24
+6
+15
+24
+```
+
+### Explanation
+
+The first row has the sum of 1 + 2 + 3 = 6.
+The second row has the sum of 4 + 5 + 6 = 1
+====================================================================================================
+REFERENCE:
+def usd_to_euro(amount):
+  euro = amount * 0.9
+  print(amount, "USD is equal to", euro, "Euros.")
+  
+usd_to_euro(12.5)
+
+PREDICTION:
+
+
+
+### Example
+
+```python
+usd_to_euro(100)
+```
+
+
+### Answer
+
+```python
+def usd_to_euro(usd):
+    euro = usd * 0.89
+    print(euro)
+```
+
+
+### References
+
+- [Python Functions](https://www.w3schools.com/python/python_functions.asp)
+- [Python Print](https://www.w3schools.com/python/ref_func_print.asp)
+- [Python Arithmetic Operators](https://www.w3schools.com/python/python_operators.asp)
+
+
+### Hints
+
+- Remember to use the `print()` function to print the result to the console.
+- Remember to use the `*` operator to multiply numbers.
+
+
+### Solution
+
+```python
+def usd_to_euro(usd):
+    euro = usd * 0.89
+    print(euro)
+```
+
+
+### Tests
+
+```python
+import unittest
+====================================================================================================
+REFERENCE:
+def search_replace(sentence, target, replacement):
+    words = sentence.split(" ")
+
+    for i in range(len(words)):
+        if words[i] == target:
+            words[i] = replacement
+    
+    return " ".join(words)
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print(search_replace(sentence, "quick", "slow")) # "The slow brown fox jumps over the lazy dog"
+
+PREDICTION:
+
+
+### Examples ###
+    replace_words("The quick brown fox jumps over the lazy dog", "jumps", "leaps")
+    'The quick brown fox leaps over the lazy dog'
+
+    replace_words("The quick brown fox jumps over the lazy dog", "the", "a")
+    'a quick brown fox jumps over a lazy dog'
+
+    replace_words("The quick brown fox jumps over the lazy dog", "the", "that")
+    'That quick brown fox jumps over that lazy dog'
+
+    replace_words("The quick brown fox jumps over the lazy dog", "the", "that", True)
+    'That quick brown fox jumps over that lazy dog'
+
+    replace_words("The quick brown fox jumps over the lazy dog", "the", "that", False)
+    'That quick brown fox jumps over that lazy dog'
+
+    replace_words("The quick brown fox jumps over the lazy dog", "the", "that", 1)
+    'That quick brown fox jumps over the lazy dog'
+
+====================================================================================================
+REFERENCE:
+def reverseSentence(sentence): 
+    words = sentence.split(' ') 
+  
+    newWords = [word[::-1] for word in words] 
+      
+    newSentence = ' '.join(newWords) 
+      
+    return newSentence 
+  
+sentence = input("Enter a sentence: ")
+print(reverseSentence(sentence))
+
+PREDICTION:
+
+
+### Input Format
+
+A single line containing a sentence.
+
+### Output Format
+
+Print the reversed sentence.
+
+### Sample Input 0
+
+```
+Welcome to the Coding Club!
+```
+
+### Sample Output 0
+
+```
+!bucaC ot gnidoC si emoc
+```
+
+### Sample Input 1
+
+```
+Hello World!
+```
+
+### Sample Output 1
+
+```
+!dlroW olleH
+```
+
+### Sample Input 2
+
+```
+Welcome to the Coding Club!
+```
+
+### Sample Output 2
+
+```
+!bucaC ot gnidoC si emoc
+```
+
+### Sample Input 3
+
+```
+Hello World!
+```
+
+### Sample Output 3
+
+```
+!dlroW olleH
+```
+
+### Sample Input 4
+
+```
+Welcome to the Coding Club!
+```
+
+### Sample Output 4
+
+```
+!bucaC ot gnidoC si emoc
+```
+
+### Sample Input 
+====================================================================================================
+REFERENCE:
+# Solution
+# First, let's define our list of numbers
+my_list = [1, 2, 3]
+
+# Now, let's define a function to generate all permutations
+def allPermutations(my_list):
+ if len(my_list) == 0:
+  return []
+ if len(my_list) == 1:
+  return [my_list]
+ permutations = []
+ for i in range(len(my_list)):
+  m = my_list[i]
+  remaining_list = my_list[:i] + my_list[i+1:]
+  for p in allPermutations(remaining_list):
+   permutations.append([m] + p)
+ return permutations
+
+# Finally, we can call the function and print out the result
+print(allPermutations(my_list))
+
+PREDICTION:
+
+
+### Examples ###
+    permutations([1, 2, 3]) ➞ [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+    permutations([1, 2, 3, 4]) ➞ [[1, 2, 3, 4], [1, 2, 4, 3], [1, 3, 2, 4], [1, 3, 4, 2], [1, 4, 2, 3], [1, 4, 3, 2], [2, 1, 3, 4], [2, 1, 4, 3], [2, 3, 1, 4], [2, 3, 4, 1], [2, 4, 1, 3], [2, 4, 3, 1], [3, 1, 2, 4], [
+====================================================================================================
+REFERENCE:
+def lcm(a, b): 
+    lcm = (a*b)//gcd(a,b) 
+    return lcm
+
+PREDICTION:
+ 
+
+### Input Format
+
+The first line contains the first number.
+The second line contains the second number.
+
+### Output Format
+
+The first line contains the LCM of the two numbers.
+
+### Sample Input
+
+```
+2
+3
+```
+
+### Sample Output
+
+```
+6
+```
+
+### Explanation
+
+The LCM of 2 and 3 is 6.
+
+### Solution
+
+```python
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+a = int(input())
+b = int(input())
+print(lcm(a, b))
+```
+
+### Problem 2
+
+Write a program to calculate the factorial of a number.
+
+### Input Format
+
+The input consists of an integer N.
+
+### Output Format
+
+The output consists of an integer denoting the factorial of N.
+
+### Sample Input
+
+```
+5
+
+====================================================================================================
+REFERENCE:
+def bubbleSort(list): 
+	n = len(list) 
+	for i in range(n): 
+		for j in range(0, n-i-1): 
+			if list[j] > list[j+1] : 
+				list[j], list[j+1] = list[j+1], list[j] 
+	return list
+
+print(bubbleSort([8,2,11,9,20,7]))
+
+PREDICTION:
+.
+
+### Input Format
+
+The first line contains an integer, *n*, denoting the size of the array.
+The second line contains *n* space-separated integers describing the array's elements.
+
+### Constraints
+
+* 1 <= n <= 1000
+* 1 <= arr[i] <= 1000
+
+### Output Format
+
+Return the array after sorting it using the bubble sort algorithm.
+
+### Sample Input
+
+```
+5
+1 3 2 5 4
+```
+
+### Sample Output
+
+```
+1 2 3 4 5
+```
+
+### Explanation
+
+[1, 3, 2, 5, 4] is sorted to [1, 2, 3, 4, 5] using the bubble sort algorithm.
+
+### Solution
+
+```python
+def bubbleSort(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if arr[j] > arr
+====================================================================================================
+REFERENCE:
+import unittest
+from flask_testing import TestCase
+from app import db, Task
+
+class TestModel(TestCase):
+ def create_app(self):
+ return app
+
+ def setUp(self):
+ db.create_all()
+ self.task = Task(description='Description')
+ db.session.add(self.task)
+ db.session.commit()
+
+ def tearDown(self):
+ db.session.remove()
+ db.drop_all()
+
+class TestTask(TestModel):
+ def test_task_creation(self):
+ self.assertEqual('Description', self.task.description)
+
+if __name__ == '__main__':
+ unittest.main()
+
+PREDICTION:
+
+
+### Objectives
+
+1. Create a Python script that will run unit tests on the models.
+2. Create a Python script that will run unit tests on the views.
+3. Create a Python script that will run unit tests on the controllers.
+
+### Instructions
+
+1. Create a Python script that will run unit tests on the models.
+
+    * Create a Python script named `test_models.py` in the `tests` directory.
+    * Import the `unittest` module.
+    * Create a class named `TestModels` that inherits from `unittest.TestCase`.
+    * Create a method named `test_user_model` that will test the `User` model.
+    * Create a method named `test_tweet_model` that will test the `Tweet` model.
+    * Create a method named `test_follow_model` that will test the `Follow` model.
+    * Create a method named `test_hashtag_model` that will test the `Hashtag` model.
+    * Create a method named `test_tweet_hashtag_model` that will test
+====================================================================================================
+REFERENCE:
+def filter_A_columns(df): 
+    col_list = [col for col in df.columns if col[0] == 'A']
+    return df[col_list]
+
+PREDICTION:
+
+
+
+```python
+def get_columns_starting_with_A(df):
+    """
+    Generate a Python function that takes a dataframe and returns a new dataframe with only the columns that start with the letter 'A'.
+    """
+    pass
+```
+
+
+```python
+df = pd.DataFrame({'A': [1, 2, 3],
+                   'B': [4, 5, 6],
+                   'C': [7, 8, 9]})
+
+get_columns_starting_with_A(df)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+
+====================================================================================================
+REFERENCE:
+arr.sort() 
+print(arr)
+
+PREDICTION:
+
+
+### Problem Statement
+
+You are given an array of integers. Write a function that returns the largest element in the array.
+
+### Input Format
+
+The first line contains an integer, `n`, denoting the size of the array.
+The second line contains `n` space-separated integers representing the array's elements.
+
+### Output Format
+
+Return the largest element in the array.
+
+### Sample Input
+
+```
+5
+1 2 3 4 5
+```
+
+### Sample Output
+
+```
+5
+```
+
+### Explanation
+
+The largest element in the array is `5`.
+
+### Solution
+
+```python
+def largest_element(arr):
+    return max(arr)
+```
+
+### Run Code
+
+```python
+arr = [1, 2, 3, 4, 5]
+print(largest_element(arr))
+```
+
+### Run Code
+
+```python
+arr = [1, 2, 3, 4, 5]
+print(largest_element(arr))
+```
+
+###
+====================================================================================================
+REFERENCE:
+#!/usr/bin/env python
+ 
+import cgi
+ 
+#Get form data
+form = cgi.FieldStorage()
+ 
+name = form.getvalue('name')
+age = form.getvalue('age')
+
+# Display the results
+print "Content-type: text/html"
+print
+print "<html>"
+print "<body>"
+print "<p>Hi, %s! You are %s years old.</p>" % (name, age)
+print "</body>"
+print "</html>"
+
+PREDICTION:
+
+
+### Step 1: Create a CGI script
+
+Create a CGI script in Python to process form data from an HTML page.
+
+1.  Create a CGI script in Python to process form data from an HTML page.
+
+    ```
+    #!/usr/bin/python
+    import cgi
+    import cgitb
+    import os
+    import sys
+    import json
+    import urllib
+    import urllib2
+    import cookielib
+    import httplib
+    import base64
+    import time
+    import datetime
+    import pytz
+    import calendar
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import pytz
+    import
+====================================================================================================
+REFERENCE:
+from textblob import TextBlob
+
+def sentiment_classifier(sentence):
+  sentiment_score = TextBlob(sentence).sentiment.polarity
+  if sentiment_score > 0:
+    return 'positive'
+  elif sentiment_score < 0:
+    return 'negative'
+  else:
+    return 'neutral'
+
+PREDICTION:
+
+
+### Requirements
+
+- Python 3.6+
+- [Pipenv](https://pipenv.readthedocs.io/en/latest/)
+
+### Installation
+
+```bash
+$ git clone https://github.com/michael-lazar/sentiment-analysis.git
+$ cd sentiment-analysis
+$ pipenv install
+```
+
+### Usage
+
+```bash
+$ pipenv run python sentiment.py
+```
+
+### Tests
+
+```bash
+$ pipenv run python -m unittest
+```
+
+### References
+
+- [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
+- [Sentiment Analysis with Python](https://www.kaggle.com/abhinavwalia95/sentiment-analysis-with-python)
+- [Sentiment Analysis with Python](https://www.kaggle.com/abhinavwalia95/sentiment-analysis-with-python)
+- [Sentiment Analysis with Python](https://www.kaggle.com/abhinavwal
+====================================================================================================
+REFERENCE:
+def is_divisible_by_5(number):
+    if (number % 5 == 0):
+        return True
+    else:
+        return False
+    
+number = 10
+is_divisible_by_5(number)
+
+PREDICTION:
+ or 7.
+
+### Examples :
+
+```
+Input : 10
+Output : 10 is divisible by 5
+
+Input : 14
+Output : 14 is not divisible by 5
+
+Input : 21
+Output : 21 is divisible by 7
+
+Input : 28
+Output : 28 is not divisible by 7
+```
+
+### Input Format :
+
+A single integer
+
+### Output Format :
+
+A string
+
+### Sample Input :
+
+```
+10
+```
+
+### Sample Output :
+
+```
+10 is divisible by 5
+```
+
+### Sample Input :
+
+```
+14
+```
+
+### Sample Output :
+
+```
+14 is not divisible by 5
+```
+
+### Sample Input :
+
+```
+21
+```
+
+### Sample Output :
+
+```
+21 is divisible by 7
+```
+
+### Sample Input :
+
+```
+28
+```
+
+### Sample Output :
+
+```
+28 is not divis
+====================================================================================================
+REFERENCE:
+import xml.etree.ElementTree as ET
+ 
+# Read the XML file
+tree = ET.parse('items.xml')
+ 
+# Get the root element
+root = tree.getroot()
+ 
+# Iterate over each item
+for item in root.findall('item'):
+ # Get the title
+ title = item.find('title').text
+ # Get the description
+ description = item.find('description').text
+ 
+ print('Title: ', title)
+ print('Description: ', description)
+
+PREDICTION:
+ 
+
+The XML document is in the file `books.xml`.
+
+The output should be a list of tuples, each tuple containing the title and description of a book.
+
+```
+[('The Grapes of Wrath', 'John Steinbeck'),
+ ('Of Mice and Men', 'John Steinbeck'),
+ ('The Catcher in the Rye', 'J.D. Salinger'),
+ ('Nineteen Eighty-Four', 'George Orwell'),
+ ('Lolita', 'Vladimir Nabokov'),
+ ('Slaughterhouse-Five', 'Kurt Vonnegut'),
+ ('The Lord of the Rings', 'J.R.R. Tolkien'),
+ ('To Kill a Mockingbird', 'Harper Lee'),
+ ('Pride and Prejudice', 'Jane Austen'),
+ ('War and Peace', 'Leo Tolstoy'),
+ ('The Great Gatsby', 'F. Scott Fitzgerald'),
+ ('Catch-22', 'Joseph Heller'),
+ ('The Sound and the Fury', 'William Faulkner'),
+ ('The Sun
+====================================================================================================
+REFERENCE:
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.example.com"
+
+page = requests.get(url)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+text = soup.find_all(text=True)
+
+for t in text:
+    print(t.strip())
+
+PREDICTION:
+. 
+
+### Step 1:
+
+Create a new file called `web_scraper.py`
+
+### Step 2:
+
+Import the `requests` library.
+
+### Step 3:
+
+Create a variable called `url` and assign it the value of `https://www.python.org/`.
+
+### Step 4:
+
+Use the `requests` library to make a `GET` request to the `url` variable.
+
+### Step 5:
+
+Extract the text from the response.
+
+### Step 6:
+
+Print the text to the console.
+
+### Step 7:
+
+Run the script.
+
+### Step 8:
+
+Check the output.
+
+### Step 9:
+
+Create a new variable called `url` and assign it the value of `https://www.google.com/`.
+
+### Step 10:
+
+Run the script again.
+
+### Step 11:
+
+Check the output.
+
+### Step 12:
+
+Create a new variable called `url` and assign it
+====================================================================================================
+REFERENCE:
+import difflib
+
+def plagiarism_detector(string_a, string_b):
+    sequence = difflib.SequenceMatcher(None, string_a, string_b)
+    similarity = sequence.ratio() * 100
+    print('Similarity = {:.2f}%'.format(similarity))
+
+plagiarism_detector('The quick brown fox', 'The quick brown fox jumps over the lazy dog')
+
+PREDICTION:
+
+
+### Requirements
+
+- Python 3.6+
+- pip
+
+### Installation
+
+```bash
+$ git clone https://github.com/michael-lazar/plagiarism-detection.git
+$ cd plagiarism-detection
+$ pip install -r requirements.txt
+```
+
+### Usage
+
+```bash
+$ python plagiarism_detection.py --help
+usage: plagiarism_detection.py [-h] [--input INPUT] [--output OUTPUT]
+                                [--threshold THRESHOLD]
+                                [--algorithm {levenshtein,jaro,jaro_winkler}]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --input INPUT         Path to the input file.
+  --output OUTPUT       Path to the output file.
+  --threshold THRESHOLD
+                        Threshold for the plagiarism detection.
+  --algorithm {levenshtein,jaro,jaro_winkler}
+====================================================================================================
+REFERENCE:
+def generate_table(num):
+    # print the table heading
+    print("MULTIPLICATION TABLE FOR {}".format(num))
+    # generate the table
+    for i in range(1, 11):
+        print("{} x {} = {}".format(num, i, num*i))
+
+# generate table for 9
+generate_table(9)
+
+PREDICTION:
+
+
+### Examples
+
+```
+>>> mult_table(5)
+[1, 2, 3, 4, 5]
+[2, 4, 6, 8, 10]
+[3, 6, 9, 12, 15]
+[4, 8, 12, 16, 20]
+[5, 10, 15, 20, 25]
+```
+
+```
+>>> mult_table(10)
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+[4, 8, 12, 16, 20, 24, 28
+====================================================================================================
+REFERENCE:
+def print_distinct(lst):
+    seen = set()
+    distinct = []
+    for x in lst:
+        if x not in seen:
+            distinct.append(x)
+            seen.add(x)
+    print(distinct)
+
+PREDICTION:
+
+
+Input Format
+
+The first line contains an integer, N, denoting the size of the array. 
+The second line contains N space-separated integers describing the array's elements.
+
+Output Format
+
+Print all the distinct elements of the array in sorted order.
+
+Sample Input
+
+5
+1 2 3 4 3
+Sample Output
+
+1 2 3 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================
+REFERENCE:
+# Python program to check whether the number is prime or not
+
+def is_prime(num):
+    """ Function to check whether the number is prime or not """
+
+    # Check whether the given number is greater than 1 
+    if num > 1:
+        # Iterate through the range of numbers to check if any number is a multiple of the given number
+        for i in range(2,num):
+            # If there is any multiple, the number is not prime
+            if (num % i) == 0:
+                return False
+        # If there are no multiples, the number is prime 
+        else:
+            return True
+
+# Call the function 
+num = 97
+print(is_prime(num))
+
+# Output:
+# True
+
+PREDICTION:
+
+
+
+### Input Format
+
+A single integer 𝑛.
+
+
+### Constraints
+
+1 ≤ 𝑛 ≤ 10<sup>9</sup>
+
+
+### Output Format
+
+If 𝑛 is prime, print "Prime" (without quotes). Otherwise, print "Not prime" (without quotes).
+
+
+### Sample Input 0
+
+```
+11
+```
+
+### Sample Output 0
+
+```
+Prime
+```
+
+### Sample Input 1
+
+```
+12
+```
+
+### Sample Output 1
+
+```
+Not prime
+```
+
+### Sample Input 2
+
+```
+13
+```
+
+### Sample Output 2
+
+```
+Prime
+```
+
+### Sample Input 3
+
+```
+101
+```
+
+### Sample Output 3
+
+```
+Not prime
+```
+
+### Sample Input 4
+
+```
+1000000007
+```
+
+### Sample Output 4
+
+```
+Prime
+```
+====================================================================================================
+REFERENCE:
+def is_present(arr, number):
+    for i in range(len(arr)):
+        if arr[i] == number:
+            return True
+    return False
+
+PREDICTION:
+
+====================================================================================================
+REFERENCE:
+# import the required libraries
+import requests
+import time
+
+# enter the website url
+url = "https://example.com/"
+
+# make the initial request to get the initial html content
+initial_content = requests.get(url).text
+
+# loop for ever
+while True: 
+    
+    # every 5 seconds, make a new request
+    time.sleep(5)
+
+    # make the new request
+    current_content = requests.get(url).text
+    
+    # compare the new content with the initial content
+    if current_content != initial_content:
+        # update the initial content
+        initial_content = current_content
+        # print the message
+        print("The content of the page has changed")
+
+PREDICTION:
+
+
+### Requirements
+
+* Python 3.6 or higher
+* [Selenium](https://selenium-python.readthedocs.io/)
+
+### Usage
+
+1. Install the required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. Run the script:
+
+    ```bash
+    python main.py
+    ```
+
+### How it works
+
+The script uses [Selenium](https://selenium-python.readthedocs.io/) to open a web page and wait for it to change.
+
+The script uses the [WebDriverWait](https://selenium-python.readthedocs.io/waits.html#explicit-waits) class to wait for the page to change.
+
+The script uses the [expected_conditions](https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.support.expected_conditions) module to check if the page has changed.
+
+The script uses the [get_attribute](https://selenium-python.readthedocs.io/api.html#selenium.
+====================================================================================================
+REFERENCE:
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1 
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+PREDICTION:
+
+
+### Example
+
+```
+>>> fib(5)
+5
+>>> fib(6)
+8
+>>> fib(7)
+13
+>>> fib(8)
+21
+>>> fib(9)
+34
+>>> fib(10)
+55
+```
+
+### Solution
+
+```python
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+```
+
+### References
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
+- [GeeksForGeeks](https://www.geeksforgeeks.org/python-program-for-nth-fibonacci-number/)
+- [HackerRank](https://www.hackerrank.com/challenges/python-fibonacci-numbers/problem)
+- [HackerEarth](https://www.hackerearth.com/practice/algorithms/rec
+====================================================================================================
+REFERENCE:
+# Sort an array with m different types of elements
+def sort_array(arr):
+    # Get the number of different types of elements 
+    m = len(set(arr)) 
+    n = len(arr) 
+  
+    # Create an output array of size n
+    output = [0] * (n) 
+   
+    # Store count of individual numbers in 
+    # count array 
+    count = [0] * (m) 
+    for i in range(0, n): 
+        count[arr[i]] += 1
+   
+    # finding cummulative count 
+    for i in range(1, m): 
+        count[i] += count[i - 1] 
+  
+    # Inserting values in sorted array
+    for i in range(n - 1, -1, -1): 
+        output[count[arr[i]] - 1] = arr[i] 
+        count[arr[i]] -= 1
+   
+    return output 
+
+# Driver Code 
+arr = [2, 1, 1, 3, 6, 4, 5, 5]
+sorted_arr = sort_array(arr) 
+  
+# Printing the sorted array 
+print(*sorted_arr)
+
+PREDICTION:
+
+
+Input Format
+
+The first line of input contains an integer n, denoting the size of the array.
+The second line of input contains n space separated integers denoting the elements of the array.
+
+Constraints
+
+1 <= n <= 10^5
+1 <= m <= 10^5
+1 <= a[i] <= 10^9
+
+Output Format
+
+Output the sorted array.
+
+Sample Input
+
+5
+1 2 3 4 5
+
+Sample Output
+
+1 2 3 4 5
+
+Explanation
+
+The array is already sorted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================
+REFERENCE:
+# Input two numbers
+a = 10
+b = 5
+
+# Swapping using bitwise operator
+a = a ^ b 
+b = a ^ b 
+a = a ^ b 
+
+# Printing output
+print("a =", a) 
+print("b =", b)
+
+PREDICTION:
+
+
+Comment: @AshishKumar: I'm not sure what you mean by "without using a temporary variable".  You can't swap two numbers without using a temporary variable.  You can swap two variables, but you can't swap two numbers.
+
+Comment: @AshishKumar: I'm not sure what you mean by "without using a temporary variable".  You can't swap two numbers without using a temporary variable.  You can swap two variables, but you can't swap two numbers.
+
+Comment: @AshishKumar: I'm not sure what you mean by "without using a temporary variable".  You can't swap two numbers without using a temporary variable.  You can swap two variables, but you can't swap two numbers.
+
+Comment: @AshishKumar: I'm not sure what you mean by "without using a temporary variable".  You can't swap two numbers without using a temporary variable.  You can swap two variables, but you can't swap two numbers.
+
+Comment: @AshishKumar: I'm not sure what you mean by "without using a temporary variable". 
+====================================================================================================
+REFERENCE:
+def insertion_sort(arr):
+    for i in range(1, len(arr)): 
+        key = arr[i] 
+        j = i-1
+        while j >=0 and key < arr[j] : 
+                arr[j+1] = arr[j] 
+                j -= 1
+        arr[j+1] = key 
+
+arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+insertion_sort(arr)
+
+PREDICTION:
+.
+
+### Input Format
+
+The first line contains an integer, _n_ , the number of elements in the array. 
+The second line contains _n_ space-separated integers describing the respective values of the array's elements.
+
+### Output Format
+
+Print the array's elements in sorted order.
+
+### Sample Input
+
+```
+5
+1 4 3 2 5
+```
+
+### Sample Output
+
+```
+1 2 3 4 5
+```
+
+### Explanation
+
+The array's elements are 1, 4, 3, 2, and 5.
+
+### Hints
+
+-   Sorting an array is a very common task.
+-   You can use the `sort()` method of the `list` class to sort an array.
+
+### Solution
+
+```python
+n = int(input())
+arr = list(map(int, input().split()))
+arr.sort()
+print(*arr)
+```
+
+### Run Code
+
+```python
+n = int(input())
+arr = list(map(int, input
+====================================================================================================

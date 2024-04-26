@@ -1,0 +1,302 @@
+[
+    {
+        "instruction": "Generate a python program that takes two strings as input and outputs the longest common substring.",
+        "output": "def longest_common_substring(s1, s2):\n    s1_length = len(s1)\n    s2_length = len(s2)\n  \n    matrix = [[0] * (s2_length + 1) for _ in range(s1_length + 1)]\n    longest, x_longest = 0, 0\n    for x in range(1, s1_length + 1):\n        for y in range(1, s2_length + 1):\n            if s1[x - 1] == s2[y - 1]:\n                matrix[x][y] = matrix[x - 1][y - 1] + 1\n                if matrix[x][y] > longest:\n                    longest = matrix[x][y]\n                    x_longest = x\n            else:\n                matrix[x][y] = 0\n    return s1[x_longest - longest: x_longest]\n\nlongest_common_substring(string1, string2) \n# output: 'Hello'",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a python program that takes two strings as input and outputs the longest common substring.\n\n### Solution:\n```\ndef longest_common_substring(s1, s2):\n    s1_length = len(s1)\n    s2_length = len(s2)\n  \n    matrix = [[0] * (s2_length + 1) for _ in range(s1_length + 1)]\n    longest, x_longest = 0, 0\n    for x in range(1, s1_length + 1):\n        for y in range(1, s2_length + 1):\n            if s1[x - 1] == s2[y - 1]:\n                matrix[x][y] = matrix[x - 1][y - 1] + 1\n                if matrix[x][y] > longest:\n                    longest = matrix[x][y]\n                    x_longest = x\n            else:\n                matrix[x][y] = 0\n    return s1[x_longest - longest: x_longest]\n\nlongest_common_substring(string1, string2) \n# output: 'Hello'\n```"
+    },
+    {
+        "instruction": "Find the most frequent element in a python list?",
+        "output": "def find_most_frequent(lst):\n    max_count = 0\n    most_frequent = None\n    count_dict = {}\n    for elem in lst:\n        if elem not in count_dict:\n            count_dict[elem] = 1\n        else:\n            count_dict[elem] += 1\n            \n        if count_dict[elem] > max_count:\n            most_frequent = elem\n            max_count = count_dict[elem]\n            \n    return most_frequent, max_count",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nFind the most frequent element in a python list?\n\n### Solution:\n```\ndef find_most_frequent(lst):\n    max_count = 0\n    most_frequent = None\n    count_dict = {}\n    for elem in lst:\n        if elem not in count_dict:\n            count_dict[elem] = 1\n        else:\n            count_dict[elem] += 1\n            \n        if count_dict[elem] > max_count:\n            most_frequent = elem\n            max_count = count_dict[elem]\n            \n    return most_frequent, max_count\n```"
+    },
+    {
+        "instruction": "Generate a python code to find the size of an object.",
+        "output": "import sys\n  \ndef size_of_object(obj): \n    return (sys.getsizeof(obj)) \n  \nobject1 = 10\nprint(size_of_object(object1))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a python code to find the size of an object.\n\n### Solution:\n```\nimport sys\n  \ndef size_of_object(obj): \n    return (sys.getsizeof(obj)) \n  \nobject1 = 10\nprint(size_of_object(object1))\n```"
+    },
+    {
+        "instruction": "Generate pseudo-random numbers in Python.",
+        "output": "# Generate pseudo-random numbers in Python\n\nimport random\n\n# Generate a pseudo-random number between 0 and 1\nnum = random.random()\nprint(\"Pseudo-random number between 0 and 1: \", num)\n\n# Generate pseudo-random numbers from a discrete set\nnum = random.choice([1, 2, 3, 4, 5])\nprint(\"Pseudo-random number from a discrete set: \", num)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate pseudo-random numbers in Python.\n\n### Solution:\n```\n# Generate pseudo-random numbers in Python\n\nimport random\n\n# Generate a pseudo-random number between 0 and 1\nnum = random.random()\nprint(\"Pseudo-random number between 0 and 1: \", num)\n\n# Generate pseudo-random numbers from a discrete set\nnum = random.choice([1, 2, 3, 4, 5])\nprint(\"Pseudo-random number from a discrete set: \", num)\n```"
+    },
+    {
+        "instruction": "Write a Python program to split a list into two parts, where the size of the first part is determined by the user.",
+        "output": "def split_list(lst, size):\n    part1 = lst[:size]\n    part2 = lst[size:]\n    return part1, part2\n\n# example\nmy_list = [1, 2, 3, 4, 5, 6, 7]\npart1, part2 = split_list(my_list, 3)\nprint(part1) # [1, 2, 3]\nprint(part2) # [4, 5, 6, 7]",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python program to split a list into two parts, where the size of the first part is determined by the user.\n\n### Solution:\n```\ndef split_list(lst, size):\n    part1 = lst[:size]\n    part2 = lst[size:]\n    return part1, part2\n\n# example\nmy_list = [1, 2, 3, 4, 5, 6, 7]\npart1, part2 = split_list(my_list, 3)\nprint(part1) # [1, 2, 3]\nprint(part2) # [4, 5, 6, 7]\n```"
+    },
+    {
+        "instruction": "Construct a Python function to filter out all the words from a list that contains the letter \"a\".",
+        "output": "def filter_words_with_a(words):\n return [word for word in words if \"a\" in word]",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nConstruct a Python function to filter out all the words from a list that contains the letter \"a\".\n\n### Solution:\n```\ndef filter_words_with_a(words):\n return [word for word in words if \"a\" in word]\n```"
+    },
+    {
+        "instruction": "Create a function in Python to print out all of the stuff in a given dictionary.",
+        "output": "def print_dict(dict):\n for key in dict:\n   print(key,\":\", dict[key])",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a function in Python to print out all of the stuff in a given dictionary.\n\n### Solution:\n```\ndef print_dict(dict):\n for key in dict:\n   print(key,\":\", dict[key])\n```"
+    },
+    {
+        "instruction": "Develop a recursive program in Python to traverse a given binary tree in-order.",
+        "output": "class Node: \n  \n    # Constructor to create a new binary node \n    def __init__(self, data):\n        self.data = data  \n        self.left = None\n        self.right = None\n\ndef inorder(root): \n    if root: \n        # First recur on left child \n        inorder(root.left) \n  \n        # then print the data of node \n        print(root.data)\n  \n        # now recur on right child \n        inorder(root.right) \n  \n\n# Driver program to test the above function \nroot = Node(1) \nroot.left      = Node(2) \nroot.right     = Node(3) \nroot.left.left  = Node(4) \nroot.left.right  = Node(5) \n  \ninorder(root)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDevelop a recursive program in Python to traverse a given binary tree in-order.\n\n### Solution:\n```\nclass Node: \n  \n    # Constructor to create a new binary node \n    def __init__(self, data):\n        self.data = data  \n        self.left = None\n        self.right = None\n\ndef inorder(root): \n    if root: \n        # First recur on left child \n        inorder(root.left) \n  \n        # then print the data of node \n        print(root.data)\n  \n        # now recur on right child \n        inorder(root.right) \n  \n\n# Driver program to test the above function \nroot = Node(1) \nroot.left      = Node(2) \nroot.right     = Node(3) \nroot.left.left  = Node(4) \nroot.left.right  = Node(5) \n  \ninorder(root)\n```"
+    },
+    {
+        "instruction": "Write an algorithm in Python to calculate the sum of even numbers in an array between a given range.",
+        "output": "def sumEvensInRange(arr, lower, upper):\n    evens_sum = 0\n    for num in arr:\n        if num >= lower and num <= upper and num % 2 == 0:\n            evens_sum += num\n    return evens_sum",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite an algorithm in Python to calculate the sum of even numbers in an array between a given range.\n\n### Solution:\n```\ndef sumEvensInRange(arr, lower, upper):\n    evens_sum = 0\n    for num in arr:\n        if num >= lower and num <= upper and num % 2 == 0:\n            evens_sum += num\n    return evens_sum\n```"
+    },
+    {
+        "instruction": "Write a Python program to calculate a value from a given sequence of numbers. The program should calculate the sum of the sequence elements and return the sum of the squares of the odd numbers from the sequence.",
+        "output": "def calc_sum(sequence):\n sum = 0\n for num in sequence:\n sum += num\n return sum\n\ndef calc_sum_squares(sequence):\n sum = 0\n for num in sequence:\n  if num % 2 == 1:\n   sum += num * num\n return sum\n\nsequence = [2, 4, 5, 6, 7]\ntotal_sum = calc_sum(sequence)\nsum_squares = calc_sum_squares(sequence)\n\nprint(\"Total sum:\", total_sum)\nprint(\"Sum of squares of odd numbers:\", sum_squares)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python program to calculate a value from a given sequence of numbers. The program should calculate the sum of the sequence elements and return the sum of the squares of the odd numbers from the sequence.\n\n### Solution:\n```\ndef calc_sum(sequence):\n sum = 0\n for num in sequence:\n sum += num\n return sum\n\ndef calc_sum_squares(sequence):\n sum = 0\n for num in sequence:\n  if num % 2 == 1:\n   sum += num * num\n return sum\n\nsequence = [2, 4, 5, 6, 7]\ntotal_sum = calc_sum(sequence)\nsum_squares = calc_sum_squares(sequence)\n\nprint(\"Total sum:\", total_sum)\nprint(\"Sum of squares of odd numbers:\", sum_squares)\n```"
+    },
+    {
+        "instruction": "Write a Python program to calculate the value of the expression 2x^2 + 5x + 3 for x = 3.",
+        "output": "x = 3\nresult = 2*(x**2) + 5*x + 3\n\nprint(result)\n\n# Outputs: 34",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python program to calculate the value of the expression 2x^2 + 5x + 3 for x = 3.\n\n### Solution:\n```\nx = 3\nresult = 2*(x**2) + 5*x + 3\n\nprint(result)\n\n# Outputs: 34\n```"
+    },
+    {
+        "instruction": "Construct a single line of code in python to get the last element of a list",
+        "output": "last_element = [1, 8, 3, 10, 5][-1]",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nConstruct a single line of code in python to get the last element of a list\n\n### Solution:\n```\nlast_element = [1, 8, 3, 10, 5][-1]\n```"
+    },
+    {
+        "instruction": "Generate a random password in Python with length of 8 characters with at least one lowercase, uppercase, number and special character.",
+        "output": "import random \nimport string\n\ndef generatePassword(length):\n\n    password_characters = string.ascii_letters + string.digits + string.punctuation\n\n    password = ''.join(random.choice(password_characters) \n                       for i in range(length))\n    lowercase = [a for a in password if a.islower()]\n    uppercase = [b for b in password if b.isupper()]\n    number = [c for c in password if c.isdigit()]\n    special_character = [d for d in password if not d.isalnum()]\n\n    if len(lowercase) == 0 or len(uppercase) == 0 or len(number) == 0 or len(special_character) == 0 :\n        return generatePassword(length)\n    else:\n        return password\n\nprint(generatePassword(8))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a random password in Python with length of 8 characters with at least one lowercase, uppercase, number and special character.\n\n### Solution:\n```\nimport random \nimport string\n\ndef generatePassword(length):\n\n    password_characters = string.ascii_letters + string.digits + string.punctuation\n\n    password = ''.join(random.choice(password_characters) \n                       for i in range(length))\n    lowercase = [a for a in password if a.islower()]\n    uppercase = [b for b in password if b.isupper()]\n    number = [c for c in password if c.isdigit()]\n    special_character = [d for d in password if not d.isalnum()]\n\n    if len(lowercase) == 0 or len(uppercase) == 0 or len(number) == 0 or len(special_character) == 0 :\n        return generatePassword(length)\n    else:\n        return password\n\nprint(generatePassword(8))\n```"
+    },
+    {
+        "instruction": "Build a machine learning model in Python to predict the price of a house using its size as the independent variable.",
+        "output": "import pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\ndata = pd.read_csv('house_price-data.csv')\n\nX = data[['size']]\ny = data['price']\n\nmodel = LinearRegression()\nmodel.fit(X, y)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nBuild a machine learning model in Python to predict the price of a house using its size as the independent variable.\n\n### Solution:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\ndata = pd.read_csv('house_price-data.csv')\n\nX = data[['size']]\ny = data['price']\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n```"
+    },
+    {
+        "instruction": "Generate a Python program which will filter all prime numbers from a list of integers.",
+        "output": "def filter_prime_numbers(l):\n    result = []\n    for num in l:\n        if is_prime(num):\n            result.append(num)\n    return result\n\ndef is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a Python program which will filter all prime numbers from a list of integers.\n\n### Solution:\n```\ndef filter_prime_numbers(l):\n    result = []\n    for num in l:\n        if is_prime(num):\n            result.append(num)\n    return result\n\ndef is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```"
+    },
+    {
+        "instruction": "Generate the syntax tree for a given Python expression.",
+        "output": "import ast\n\ntree = ast.parse(expression)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate the syntax tree for a given Python expression.\n\n### Solution:\n```\nimport ast\n\ntree = ast.parse(expression)\n```"
+    },
+    {
+        "instruction": "Create a Python program to round up a float to the nearest integer.",
+        "output": "def round_up(f):\n    if f - int(f) >= 0.5:\n        return int(f) + 1\n    return int(f)\n\nround_val = round_up(3.14)\nprint(round_val)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python program to round up a float to the nearest integer.\n\n### Solution:\n```\ndef round_up(f):\n    if f - int(f) >= 0.5:\n        return int(f) + 1\n    return int(f)\n\nround_val = round_up(3.14)\nprint(round_val)\n```"
+    },
+    {
+        "instruction": "Create a python program to assess whether or not a movie genre is representing violent behavior, given a review of the movie.",
+        "output": "\"\"\"\nCreate a program to assess whether or not a movie genre is representing violent behaviour\n\"\"\"\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\n\ndef classify_movie(review):\n    # Tokenize review\n    tokens = word_tokenize(review)\n\n    # Check for violent words in the review\n    violent_words = ['violence', 'violent', 'killing', 'fight', 'bloody', 'war']\n\n    for token in tokens:\n        if token in violent_words:\n            return 'Yes'\n\n    return 'No'\n\nif __name__ == '__main__':\n    review = 'The movie is full of thrilling action scenes and lots of violence.'\n    result = classify_movie(review)\n    print(result)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a python program to assess whether or not a movie genre is representing violent behavior, given a review of the movie.\n\n### Solution:\n```\n\"\"\"\nCreate a program to assess whether or not a movie genre is representing violent behaviour\n\"\"\"\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\n\ndef classify_movie(review):\n    # Tokenize review\n    tokens = word_tokenize(review)\n\n    # Check for violent words in the review\n    violent_words = ['violence', 'violent', 'killing', 'fight', 'bloody', 'war']\n\n    for token in tokens:\n        if token in violent_words:\n            return 'Yes'\n\n    return 'No'\n\nif __name__ == '__main__':\n    review = 'The movie is full of thrilling action scenes and lots of violence.'\n    result = classify_movie(review)\n    print(result)\n```"
+    },
+    {
+        "instruction": "Create a Python class for storing and retrieving data from a database.",
+        "output": "import sqlite3\n\nclass DataAccess(object):\n \n def __init__(self, db_name):\n self.conn = sqlite3.connect(db_name)\n self.cur = self.conn.cursor()\n \n def save_data(self, table, id, name):\n self.cur.execute(f\"INSERT INTO {table} VALUES (?, ?)\", (id, name))\n self.conn.commit()\n \n def read_data(self, table, id):\n self.cur.execute(f\"SELECT * FROM {table} WHERE id = ?\", (id,))\n return self.cur.fetchone()\n \n def close_connection(self):\n self.conn.close()\n\nUserDAO = DataAccess('my_db.db')",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python class for storing and retrieving data from a database.\n\n### Solution:\n```\nimport sqlite3\n\nclass DataAccess(object):\n \n def __init__(self, db_name):\n self.conn = sqlite3.connect(db_name)\n self.cur = self.conn.cursor()\n \n def save_data(self, table, id, name):\n self.cur.execute(f\"INSERT INTO {table} VALUES (?, ?)\", (id, name))\n self.conn.commit()\n \n def read_data(self, table, id):\n self.cur.execute(f\"SELECT * FROM {table} WHERE id = ?\", (id,))\n return self.cur.fetchone()\n \n def close_connection(self):\n self.conn.close()\n\nUserDAO = DataAccess('my_db.db')\n```"
+    },
+    {
+        "instruction": "Define a class method in Python to initialize an object's fields.",
+        "output": "class SomeClass:\n\n    def __init__(self, field1, field2):\n        self.field1 = field1\n        self.field2 = field2",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDefine a class method in Python to initialize an object's fields.\n\n### Solution:\n```\nclass SomeClass:\n\n    def __init__(self, field1, field2):\n        self.field1 = field1\n        self.field2 = field2\n```"
+    },
+    {
+        "instruction": "Create a Python object that contains two attributes, \"Name\" and \"Age\".",
+        "output": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nperson = Person(\"John\", 25)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python object that contains two attributes, \"Name\" and \"Age\".\n\n### Solution:\n```\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nperson = Person(\"John\", 25)\n```"
+    },
+    {
+        "instruction": "Create a Python function to filter a given list of strings and return a new list of strings containing only unique elements.",
+        "output": "def filter_list(strings):\n    unique_strings = []\n    for string in strings:\n        if string not in unique_strings:\n            unique_strings.append(string)\n    return unique_strings\n\nstrings = [\"abc\", \"def\", \"abc\", \"ghi\", \"jkl\", \"mno\", \"abc\", \"pqr\"]\nfiltered_strings = filter_list(strings)\nprint(filtered_strings)\n\n# Output: ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqr']",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python function to filter a given list of strings and return a new list of strings containing only unique elements.\n\n### Solution:\n```\ndef filter_list(strings):\n    unique_strings = []\n    for string in strings:\n        if string not in unique_strings:\n            unique_strings.append(string)\n    return unique_strings\n\nstrings = [\"abc\", \"def\", \"abc\", \"ghi\", \"jkl\", \"mno\", \"abc\", \"pqr\"]\nfiltered_strings = filter_list(strings)\nprint(filtered_strings)\n\n# Output: ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqr']\n```"
+    },
+    {
+        "instruction": "Create a Python program to reverse a given array by swapping the elements.",
+        "output": "def reverse_array(arr): \n      \n    # Initialize start and end index \n        start = 0\n        end = len(arr) - 1\n  \n    # Loop over the array \n    while start < end: \n  \n        # Swap the elements at start and end \n        arr[start], arr[end] = arr[end], arr[start]  \n          \n        # Update start and end index \n        start += 1\n        end -= 1\n  \n# Driver code \narr = [1, 2, 3] \n  \nreverse_array(arr) \n  \n# Print our modified array   \nprint(arr)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python program to reverse a given array by swapping the elements.\n\n### Solution:\n```\ndef reverse_array(arr): \n      \n    # Initialize start and end index \n        start = 0\n        end = len(arr) - 1\n  \n    # Loop over the array \n    while start < end: \n  \n        # Swap the elements at start and end \n        arr[start], arr[end] = arr[end], arr[start]  \n          \n        # Update start and end index \n        start += 1\n        end -= 1\n  \n# Driver code \narr = [1, 2, 3] \n  \nreverse_array(arr) \n  \n# Print our modified array   \nprint(arr)\n```"
+    },
+    {
+        "instruction": "Generate a random 10-letter string using Python",
+        "output": "import string\nimport random\n\ndef generateRandomString():\n    letters = string.ascii_lowercase\n    return ''.join(random.choice(letters) for _ in range(10))\n    \nif __name__ == '__main__':\n    print(generateRandomString())",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a random 10-letter string using Python\n\n### Solution:\n```\nimport string\nimport random\n\ndef generateRandomString():\n    letters = string.ascii_lowercase\n    return ''.join(random.choice(letters) for _ in range(10))\n    \nif __name__ == '__main__':\n    print(generateRandomString())\n```"
+    },
+    {
+        "instruction": "Write a Python loop to print the numbers between 2 and 10 (inclusive).",
+        "output": "for i in range(2, 11):\n    print(i)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python loop to print the numbers between 2 and 10 (inclusive).\n\n### Solution:\n```\nfor i in range(2, 11):\n    print(i)\n```"
+    },
+    {
+        "instruction": "Construct a Python program to print all the numbers between 0 and a given number n that are divisible by 3.",
+        "output": "def print_divisible_by_three(n):\n  for num in range(n+1):\n    if num % 3 == 0:\n      print(num, end=\" \")\n\nprint_divisible_by_three(10)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nConstruct a Python program to print all the numbers between 0 and a given number n that are divisible by 3.\n\n### Solution:\n```\ndef print_divisible_by_three(n):\n  for num in range(n+1):\n    if num % 3 == 0:\n      print(num, end=\" \")\n\nprint_divisible_by_three(10)\n```"
+    },
+    {
+        "instruction": "Create a search engine in Python to search a collection of documents for a given keyword.",
+        "output": "import string\n\ndef search(docs, key):\n results = []\n for doc in docs:\n words = doc.lower().translate(str.maketrans('', '', string.punctuation)).split()\n if key in words:\n results.append(doc)\n return results",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a search engine in Python to search a collection of documents for a given keyword.\n\n### Solution:\n```\nimport string\n\ndef search(docs, key):\n results = []\n for doc in docs:\n words = doc.lower().translate(str.maketrans('', '', string.punctuation)).split()\n if key in words:\n results.append(doc)\n return results\n```"
+    },
+    {
+        "instruction": "Design a program in Python to filter the elements from a list which are not divisible by 3.",
+        "output": "def filter_list(arr):\n    filtered_list = []\n    for num in arr:\n        if num % 3 != 0:\n            filtered_list.append(num)\n    return filtered_list\n\nprint(filter_list([2, 3, 4, 5, 6, 7, 8, 9]))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDesign a program in Python to filter the elements from a list which are not divisible by 3.\n\n### Solution:\n```\ndef filter_list(arr):\n    filtered_list = []\n    for num in arr:\n        if num % 3 != 0:\n            filtered_list.append(num)\n    return filtered_list\n\nprint(filter_list([2, 3, 4, 5, 6, 7, 8, 9]))\n```"
+    },
+    {
+        "instruction": "Develop a program in Python for counting the occurrences of a given character in a string.",
+        "output": "def countOccurences(str, char):\n    count = 0\n    for ch in str:\n        if ch == char:\n            count += 1\n    return count\n\nprint(countOccurences('abcdefg', 'a'))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDevelop a program in Python for counting the occurrences of a given character in a string.\n\n### Solution:\n```\ndef countOccurences(str, char):\n    count = 0\n    for ch in str:\n        if ch == char:\n            count += 1\n    return count\n\nprint(countOccurences('abcdefg', 'a'))\n```"
+    },
+    {
+        "instruction": "Write a function in Python to find the number of prime numbers up to a given number.",
+        "output": "def countPrimes(num): \n    if num <= 1:  \n        return 0\n \n    primes = [2] \n    x = 3\n    \n    while x <= num: \n        for y in primes: \n            if x % y == 0: \n                x += 2\n                continue\n        primes.append(x) \n        x += 2\n    \n    return len(primes) \n\nnum_primes = countPrimes(100)\nprint(\"Number of primes between 1 and 100:\", num_primes)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a function in Python to find the number of prime numbers up to a given number.\n\n### Solution:\n```\ndef countPrimes(num): \n    if num <= 1:  \n        return 0\n \n    primes = [2] \n    x = 3\n    \n    while x <= num: \n        for y in primes: \n            if x % y == 0: \n                x += 2\n                continue\n        primes.append(x) \n        x += 2\n    \n    return len(primes) \n\nnum_primes = countPrimes(100)\nprint(\"Number of primes between 1 and 100:\", num_primes)\n```"
+    },
+    {
+        "instruction": "Build a Python command-line program that takes in a string and encrypts it with a password.",
+        "output": "import hashlib \n  \ndef encrypt_string(string, password):\n    md5_string = hashlib.md5(string.encode()).hexdigest()\n    password_string = hashlib.md5(password.encode()).hexdigest()\n    result = \"\"\n\n    for i in range(32):\n        result += md5_string[i] + password_string[i]\n    return result\n\nstring = \"Hello World!\"\npassword = \"password\"\n\nresult = encrypt_string(string, password)\nprint(result)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nBuild a Python command-line program that takes in a string and encrypts it with a password.\n\n### Solution:\n```\nimport hashlib \n  \ndef encrypt_string(string, password):\n    md5_string = hashlib.md5(string.encode()).hexdigest()\n    password_string = hashlib.md5(password.encode()).hexdigest()\n    result = \"\"\n\n    for i in range(32):\n        result += md5_string[i] + password_string[i]\n    return result\n\nstring = \"Hello World!\"\npassword = \"password\"\n\nresult = encrypt_string(string, password)\nprint(result)\n```"
+    },
+    {
+        "instruction": "Develop an algorithm in Python to create a Fibonacci sequence up to the nth number.",
+        "output": "def fibonacci(n):\n  if n<0:\n    print(\"Incorrect input\")\n  elif n==1:\n    return 0\n  elif n==2:\n    return 1\n  else:\n    return fibonacci(n-1)+fibonacci(n-2)\nprint(\"Fibonacci series up to\",n,\":\")\nfor i in range(1,n+1):\n  print(fibonacci(i))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDevelop an algorithm in Python to create a Fibonacci sequence up to the nth number.\n\n### Solution:\n```\ndef fibonacci(n):\n  if n<0:\n    print(\"Incorrect input\")\n  elif n==1:\n    return 0\n  elif n==2:\n    return 1\n  else:\n    return fibonacci(n-1)+fibonacci(n-2)\nprint(\"Fibonacci series up to\",n,\":\")\nfor i in range(1,n+1):\n  print(fibonacci(i))\n```"
+    },
+    {
+        "instruction": "Using the given data, create a class in Python and add some methods to the class.",
+        "output": "class File:\n    \"\"\"A simple file class\"\"\"\n    def __init__(self, name, size, type):\n        self.name = name\n        self.size = size\n        self.type = type\n\n    def get_name(self):\n        return self.name\n\n    def get_size(self):\n        return self.size\n\n    def get_type(self):\n        return self.type",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nUsing the given data, create a class in Python and add some methods to the class.\n\n### Solution:\n```\nclass File:\n    \"\"\"A simple file class\"\"\"\n    def __init__(self, name, size, type):\n        self.name = name\n        self.size = size\n        self.type = type\n\n    def get_name(self):\n        return self.name\n\n    def get_size(self):\n        return self.size\n\n    def get_type(self):\n        return self.type\n```"
+    },
+    {
+        "instruction": "Write a web scraper in Python to collect all the articles from the front page of a given website.",
+        "output": "import requests\nfrom bs4 import BeautifulSoup\n\n# Specify the URL\nurl = 'website.com'\n\n# Get the response\nresponse = requests.get(url)\n\n# Parse the response\nsoup = BeautifulSoup(response.text, 'html.parser')\n\n# Extract all the articles on the front page\narticles = soup.find_all('article', class_='front-page-article')\n\n# Iterate through each article and print its text\nfor article in articles:\n print(article.find('h2').text)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a web scraper in Python to collect all the articles from the front page of a given website.\n\n### Solution:\n```\nimport requests\nfrom bs4 import BeautifulSoup\n\n# Specify the URL\nurl = 'website.com'\n\n# Get the response\nresponse = requests.get(url)\n\n# Parse the response\nsoup = BeautifulSoup(response.text, 'html.parser')\n\n# Extract all the articles on the front page\narticles = soup.find_all('article', class_='front-page-article')\n\n# Iterate through each article and print its text\nfor article in articles:\n print(article.find('h2').text)\n```"
+    },
+    {
+        "instruction": "Create a Python script to generate a global unique identifier (GUID).",
+        "output": "import uuid\n \n# generate a GUID\nguid = str(uuid.uuid4())\n \n# print the GUID\nprint(guid)\n\n// Output: 3c112f3d-3c68-4b4c-a85d-672622be9f25",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python script to generate a global unique identifier (GUID).\n\n### Solution:\n```\nimport uuid\n \n# generate a GUID\nguid = str(uuid.uuid4())\n \n# print the GUID\nprint(guid)\n\n// Output: 3c112f3d-3c68-4b4c-a85d-672622be9f25\n```"
+    },
+    {
+        "instruction": "Create a Python program that takes a two dimensional array of integers and calculates the sum of each row and each column of the array.",
+        "output": "def calculateSum(arr):\n sums = [0] * len(arr[0])\n for r in arr:\n  for i in range(len(r)):\n   sums[i] += r[i]\n return sums\n\ndef getRowsSum(arr):\n rowSums = []\n for r in arr:\n  rowSums.append(sum(r))\n return rowSums\n\narr = [[2, 3, 5], \n [5, 7, 1], \n [4, 6, 9]]\n\ncolumnSums = calculateSum(arr)\nrowSums = getRowsSum(arr)\n\nprint(\"Row sums:\", rowSums)\nprint(\"Column sums:\", columnSums)\n\n# Output: Row sums: [10, 13, 15] Column sums: [11, 16, 15]",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python program that takes a two dimensional array of integers and calculates the sum of each row and each column of the array.\n\n### Solution:\n```\ndef calculateSum(arr):\n sums = [0] * len(arr[0])\n for r in arr:\n  for i in range(len(r)):\n   sums[i] += r[i]\n return sums\n\ndef getRowsSum(arr):\n rowSums = []\n for r in arr:\n  rowSums.append(sum(r))\n return rowSums\n\narr = [[2, 3, 5], \n [5, 7, 1], \n [4, 6, 9]]\n\ncolumnSums = calculateSum(arr)\nrowSums = getRowsSum(arr)\n\nprint(\"Row sums:\", rowSums)\nprint(\"Column sums:\", columnSums)\n\n# Output: Row sums: [10, 13, 15] Column sums: [11, 16, 15]\n```"
+    },
+    {
+        "instruction": "Write a Python function to convert USD to Euro and print the new value to the console.",
+        "output": "def usd_to_euro(amount):\n  euro = amount * 0.9\n  print(amount, \"USD is equal to\", euro, \"Euros.\")\n  \nusd_to_euro(12.5)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python function to convert USD to Euro and print the new value to the console.\n\n### Solution:\n```\ndef usd_to_euro(amount):\n  euro = amount * 0.9\n  print(amount, \"USD is equal to\", euro, \"Euros.\")\n  \nusd_to_euro(12.5)\n```"
+    },
+    {
+        "instruction": "Create a Python function to search and replace words in a given sentence.",
+        "output": "def search_replace(sentence, target, replacement):\n    words = sentence.split(\" \")\n\n    for i in range(len(words)):\n        if words[i] == target:\n            words[i] = replacement\n    \n    return \" \".join(words)\n\nsentence = \"The quick brown fox jumps over the lazy dog\"\nprint(search_replace(sentence, \"quick\", \"slow\")) # \"The slow brown fox jumps over the lazy dog\"",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python function to search and replace words in a given sentence.\n\n### Solution:\n```\ndef search_replace(sentence, target, replacement):\n    words = sentence.split(\" \")\n\n    for i in range(len(words)):\n        if words[i] == target:\n            words[i] = replacement\n    \n    return \" \".join(words)\n\nsentence = \"The quick brown fox jumps over the lazy dog\"\nprint(search_replace(sentence, \"quick\", \"slow\")) # \"The slow brown fox jumps over the lazy dog\"\n```"
+    },
+    {
+        "instruction": "Create a program in Python that takes in a sentence from the user, and reverse the sentence.",
+        "output": "def reverseSentence(sentence): \n    words = sentence.split(' ') \n  \n    newWords = [word[::-1] for word in words] \n      \n    newSentence = ' '.join(newWords) \n      \n    return newSentence \n  \nsentence = input(\"Enter a sentence: \")\nprint(reverseSentence(sentence))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a program in Python that takes in a sentence from the user, and reverse the sentence.\n\n### Solution:\n```\ndef reverseSentence(sentence): \n    words = sentence.split(' ') \n  \n    newWords = [word[::-1] for word in words] \n      \n    newSentence = ' '.join(newWords) \n      \n    return newSentence \n  \nsentence = input(\"Enter a sentence: \")\nprint(reverseSentence(sentence))\n```"
+    },
+    {
+        "instruction": "Create a function to generate all permutations of a given list in Python.",
+        "output": "# Solution\n# First, let's define our list of numbers\nmy_list = [1, 2, 3]\n\n# Now, let's define a function to generate all permutations\ndef allPermutations(my_list):\n if len(my_list) == 0:\n  return []\n if len(my_list) == 1:\n  return [my_list]\n permutations = []\n for i in range(len(my_list)):\n  m = my_list[i]\n  remaining_list = my_list[:i] + my_list[i+1:]\n  for p in allPermutations(remaining_list):\n   permutations.append([m] + p)\n return permutations\n\n# Finally, we can call the function and print out the result\nprint(allPermutations(my_list))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a function to generate all permutations of a given list in Python.\n\n### Solution:\n```\n# Solution\n# First, let's define our list of numbers\nmy_list = [1, 2, 3]\n\n# Now, let's define a function to generate all permutations\ndef allPermutations(my_list):\n if len(my_list) == 0:\n  return []\n if len(my_list) == 1:\n  return [my_list]\n permutations = []\n for i in range(len(my_list)):\n  m = my_list[i]\n  remaining_list = my_list[:i] + my_list[i+1:]\n  for p in allPermutations(remaining_list):\n   permutations.append([m] + p)\n return permutations\n\n# Finally, we can call the function and print out the result\nprint(allPermutations(my_list))\n```"
+    },
+    {
+        "instruction": "Generate a Python function to calculate the least common multiple (LCM) of two numbers.",
+        "output": "def lcm(a, b): \n    lcm = (a*b)//gcd(a,b) \n    return lcm",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a Python function to calculate the least common multiple (LCM) of two numbers.\n\n### Solution:\n```\ndef lcm(a, b): \n    lcm = (a*b)//gcd(a,b) \n    return lcm\n```"
+    },
+    {
+        "instruction": "Generate a Python function that sorts a list of numbers using the bubble sort algorithm",
+        "output": "def bubbleSort(list): \n\tn = len(list) \n\tfor i in range(n): \n\t\tfor j in range(0, n-i-1): \n\t\t\tif list[j] > list[j+1] : \n\t\t\t\tlist[j], list[j+1] = list[j+1], list[j] \n\treturn list\n\nprint(bubbleSort([8,2,11,9,20,7]))",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a Python function that sorts a list of numbers using the bubble sort algorithm\n\n### Solution:\n```\ndef bubbleSort(list): \n\tn = len(list) \n\tfor i in range(n): \n\t\tfor j in range(0, n-i-1): \n\t\t\tif list[j] > list[j+1] : \n\t\t\t\tlist[j], list[j+1] = list[j+1], list[j] \n\treturn list\n\nprint(bubbleSort([8,2,11,9,20,7]))\n```"
+    },
+    {
+        "instruction": "Automate the testing of a Python Flask application by writing a script that will run unit tests on the models.",
+        "output": "import unittest\nfrom flask_testing import TestCase\nfrom app import db, Task\n\nclass TestModel(TestCase):\n def create_app(self):\n return app\n\n def setUp(self):\n db.create_all()\n self.task = Task(description='Description')\n db.session.add(self.task)\n db.session.commit()\n\n def tearDown(self):\n db.session.remove()\n db.drop_all()\n\nclass TestTask(TestModel):\n def test_task_creation(self):\n self.assertEqual('Description', self.task.description)\n\nif __name__ == '__main__':\n unittest.main()",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nAutomate the testing of a Python Flask application by writing a script that will run unit tests on the models.\n\n### Solution:\n```\nimport unittest\nfrom flask_testing import TestCase\nfrom app import db, Task\n\nclass TestModel(TestCase):\n def create_app(self):\n return app\n\n def setUp(self):\n db.create_all()\n self.task = Task(description='Description')\n db.session.add(self.task)\n db.session.commit()\n\n def tearDown(self):\n db.session.remove()\n db.drop_all()\n\nclass TestTask(TestModel):\n def test_task_creation(self):\n self.assertEqual('Description', self.task.description)\n\nif __name__ == '__main__':\n unittest.main()\n```"
+    },
+    {
+        "instruction": "Generate a Python function that takes a dataframe and returns a new dataframe with only the columns that start with the letter 'A'.",
+        "output": "def filter_A_columns(df): \n    col_list = [col for col in df.columns if col[0] == 'A']\n    return df[col_list]",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGenerate a Python function that takes a dataframe and returns a new dataframe with only the columns that start with the letter 'A'.\n\n### Solution:\n```\ndef filter_A_columns(df): \n    col_list = [col for col in df.columns if col[0] == 'A']\n    return df[col_list]\n```"
+    },
+    {
+        "instruction": "Utilize array sorting to sort an array in Python.",
+        "output": "arr.sort() \nprint(arr)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nUtilize array sorting to sort an array in Python.\n\n### Solution:\n```\narr.sort() \nprint(arr)\n```"
+    },
+    {
+        "instruction": "Create a CGI script in Python to process form data from an HTML page.",
+        "output": "#!/usr/bin/env python\n \nimport cgi\n \n#Get form data\nform = cgi.FieldStorage()\n \nname = form.getvalue('name')\nage = form.getvalue('age')\n\n# Display the results\nprint \"Content-type: text/html\"\nprint\nprint \"<html>\"\nprint \"<body>\"\nprint \"<p>Hi, %s! You are %s years old.</p>\" % (name, age)\nprint \"</body>\"\nprint \"</html>\"",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a CGI script in Python to process form data from an HTML page.\n\n### Solution:\n```\n#!/usr/bin/env python\n \nimport cgi\n \n#Get form data\nform = cgi.FieldStorage()\n \nname = form.getvalue('name')\nage = form.getvalue('age')\n\n# Display the results\nprint \"Content-type: text/html\"\nprint\nprint \"<html>\"\nprint \"<body>\"\nprint \"<p>Hi, %s! You are %s years old.</p>\" % (name, age)\nprint \"</body>\"\nprint \"</html>\"\n```"
+    },
+    {
+        "instruction": "Develop a program in Python to classify the sentiment of a given sentence.",
+        "output": "from textblob import TextBlob\n\ndef sentiment_classifier(sentence):\n  sentiment_score = TextBlob(sentence).sentiment.polarity\n  if sentiment_score > 0:\n    return 'positive'\n  elif sentiment_score < 0:\n    return 'negative'\n  else:\n    return 'neutral'",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDevelop a program in Python to classify the sentiment of a given sentence.\n\n### Solution:\n```\nfrom textblob import TextBlob\n\ndef sentiment_classifier(sentence):\n  sentiment_score = TextBlob(sentence).sentiment.polarity\n  if sentiment_score > 0:\n    return 'positive'\n  elif sentiment_score < 0:\n    return 'negative'\n  else:\n    return 'neutral'\n```"
+    },
+    {
+        "instruction": "Create a Python program to check if an integer is divisible by 5",
+        "output": "def is_divisible_by_5(number):\n    if (number % 5 == 0):\n        return True\n    else:\n        return False\n    \nnumber = 10\nis_divisible_by_5(number)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python program to check if an integer is divisible by 5\n\n### Solution:\n```\ndef is_divisible_by_5(number):\n    if (number % 5 == 0):\n        return True\n    else:\n        return False\n    \nnumber = 10\nis_divisible_by_5(number)\n```"
+    },
+    {
+        "instruction": "Create a Python script to parse an XML document and extract the title and description for each item in the document.",
+        "output": "import xml.etree.ElementTree as ET\n \n# Read the XML file\ntree = ET.parse('items.xml')\n \n# Get the root element\nroot = tree.getroot()\n \n# Iterate over each item\nfor item in root.findall('item'):\n # Get the title\n title = item.find('title').text\n # Get the description\n description = item.find('description').text\n \n print('Title: ', title)\n print('Description: ', description)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python script to parse an XML document and extract the title and description for each item in the document.\n\n### Solution:\n```\nimport xml.etree.ElementTree as ET\n \n# Read the XML file\ntree = ET.parse('items.xml')\n \n# Get the root element\nroot = tree.getroot()\n \n# Iterate over each item\nfor item in root.findall('item'):\n # Get the title\n title = item.find('title').text\n # Get the description\n description = item.find('description').text\n \n print('Title: ', title)\n print('Description: ', description)\n```"
+    },
+    {
+        "instruction": "Create a Python script that extracts the text from a webpage",
+        "output": "import requests\nfrom bs4 import BeautifulSoup\n\nurl = \"https://www.example.com\"\n\npage = requests.get(url)\n\nsoup = BeautifulSoup(page.content, 'html.parser')\n\ntext = soup.find_all(text=True)\n\nfor t in text:\n    print(t.strip())",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCreate a Python script that extracts the text from a webpage\n\n### Solution:\n```\nimport requests\nfrom bs4 import BeautifulSoup\n\nurl = \"https://www.example.com\"\n\npage = requests.get(url)\n\nsoup = BeautifulSoup(page.content, 'html.parser')\n\ntext = soup.find_all(text=True)\n\nfor t in text:\n    print(t.strip())\n```"
+    },
+    {
+        "instruction": "Develop a system in Python for detecting plagiarism.",
+        "output": "import difflib\n\ndef plagiarism_detector(string_a, string_b):\n    sequence = difflib.SequenceMatcher(None, string_a, string_b)\n    similarity = sequence.ratio() * 100\n    print('Similarity = {:.2f}%'.format(similarity))\n\nplagiarism_detector('The quick brown fox', 'The quick brown fox jumps over the lazy dog')",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDevelop a system in Python for detecting plagiarism.\n\n### Solution:\n```\nimport difflib\n\ndef plagiarism_detector(string_a, string_b):\n    sequence = difflib.SequenceMatcher(None, string_a, string_b)\n    similarity = sequence.ratio() * 100\n    print('Similarity = {:.2f}%'.format(similarity))\n\nplagiarism_detector('The quick brown fox', 'The quick brown fox jumps over the lazy dog')\n```"
+    },
+    {
+        "instruction": "Write a Python function to generate a multiplication table for a given number.",
+        "output": "def generate_table(num):\n    # print the table heading\n    print(\"MULTIPLICATION TABLE FOR {}\".format(num))\n    # generate the table\n    for i in range(1, 11):\n        print(\"{} x {} = {}\".format(num, i, num*i))\n\n# generate table for 9\ngenerate_table(9)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python function to generate a multiplication table for a given number.\n\n### Solution:\n```\ndef generate_table(num):\n    # print the table heading\n    print(\"MULTIPLICATION TABLE FOR {}\".format(num))\n    # generate the table\n    for i in range(1, 11):\n        print(\"{} x {} = {}\".format(num, i, num*i))\n\n# generate table for 9\ngenerate_table(9)\n```"
+    },
+    {
+        "instruction": "Write a Python program to print out all the distinct elements of an array.",
+        "output": "def print_distinct(lst):\n    seen = set()\n    distinct = []\n    for x in lst:\n        if x not in seen:\n            distinct.append(x)\n            seen.add(x)\n    print(distinct)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python program to print out all the distinct elements of an array.\n\n### Solution:\n```\ndef print_distinct(lst):\n    seen = set()\n    distinct = []\n    for x in lst:\n        if x not in seen:\n            distinct.append(x)\n            seen.add(x)\n    print(distinct)\n```"
+    },
+    {
+        "instruction": "Write a Python function to check whether the number is prime or not.",
+        "output": "# Python program to check whether the number is prime or not\n\ndef is_prime(num):\n    \"\"\" Function to check whether the number is prime or not \"\"\"\n\n    # Check whether the given number is greater than 1 \n    if num > 1:\n        # Iterate through the range of numbers to check if any number is a multiple of the given number\n        for i in range(2,num):\n            # If there is any multiple, the number is not prime\n            if (num % i) == 0:\n                return False\n        # If there are no multiples, the number is prime \n        else:\n            return True\n\n# Call the function \nnum = 97\nprint(is_prime(num))\n\n# Output:\n# True",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python function to check whether the number is prime or not.\n\n### Solution:\n```\n# Python program to check whether the number is prime or not\n\ndef is_prime(num):\n    \"\"\" Function to check whether the number is prime or not \"\"\"\n\n    # Check whether the given number is greater than 1 \n    if num > 1:\n        # Iterate through the range of numbers to check if any number is a multiple of the given number\n        for i in range(2,num):\n            # If there is any multiple, the number is not prime\n            if (num % i) == 0:\n                return False\n        # If there are no multiples, the number is prime \n        else:\n            return True\n\n# Call the function \nnum = 97\nprint(is_prime(num))\n\n# Output:\n# True\n```"
+    },
+    {
+        "instruction": "Given an array and a number, write a Python function that will determine if the number is present in the array.",
+        "output": "def is_present(arr, number):\n    for i in range(len(arr)):\n        if arr[i] == number:\n            return True\n    return False",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nGiven an array and a number, write a Python function that will determine if the number is present in the array.\n\n### Solution:\n```\ndef is_present(arr, number):\n    for i in range(len(arr)):\n        if arr[i] == number:\n            return True\n    return False\n```"
+    },
+    {
+        "instruction": "Write a Python script that displays a message in the console when a certain web page changes its content.",
+        "output": "# import the required libraries\nimport requests\nimport time\n\n# enter the website url\nurl = \"https://example.com/\"\n\n# make the initial request to get the initial html content\ninitial_content = requests.get(url).text\n\n# loop for ever\nwhile True: \n    \n    # every 5 seconds, make a new request\n    time.sleep(5)\n\n    # make the new request\n    current_content = requests.get(url).text\n    \n    # compare the new content with the initial content\n    if current_content != initial_content:\n        # update the initial content\n        initial_content = current_content\n        # print the message\n        print(\"The content of the page has changed\")",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python script that displays a message in the console when a certain web page changes its content.\n\n### Solution:\n```\n# import the required libraries\nimport requests\nimport time\n\n# enter the website url\nurl = \"https://example.com/\"\n\n# make the initial request to get the initial html content\ninitial_content = requests.get(url).text\n\n# loop for ever\nwhile True: \n    \n    # every 5 seconds, make a new request\n    time.sleep(5)\n\n    # make the new request\n    current_content = requests.get(url).text\n    \n    # compare the new content with the initial content\n    if current_content != initial_content:\n        # update the initial content\n        initial_content = current_content\n        # print the message\n        print(\"The content of the page has changed\")\n```"
+    },
+    {
+        "instruction": "Design a recursive function in Python that prints the nth Fibonacci number.",
+        "output": "def fibonacci(n):\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1 \n    else:\n        return fibonacci(n-1) + fibonacci(n-2)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nDesign a recursive function in Python that prints the nth Fibonacci number.\n\n### Solution:\n```\ndef fibonacci(n):\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1 \n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n```"
+    },
+    {
+        "instruction": "Edit a Python program to sort an array of size n with m different types of numbers in ascending order.",
+        "output": "# Sort an array with m different types of elements\ndef sort_array(arr):\n    # Get the number of different types of elements \n    m = len(set(arr)) \n    n = len(arr) \n  \n    # Create an output array of size n\n    output = [0] * (n) \n   \n    # Store count of individual numbers in \n    # count array \n    count = [0] * (m) \n    for i in range(0, n): \n        count[arr[i]] += 1\n   \n    # finding cummulative count \n    for i in range(1, m): \n        count[i] += count[i - 1] \n  \n    # Inserting values in sorted array\n    for i in range(n - 1, -1, -1): \n        output[count[arr[i]] - 1] = arr[i] \n        count[arr[i]] -= 1\n   \n    return output \n\n# Driver Code \narr = [2, 1, 1, 3, 6, 4, 5, 5]\nsorted_arr = sort_array(arr) \n  \n# Printing the sorted array \nprint(*sorted_arr)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nEdit a Python program to sort an array of size n with m different types of numbers in ascending order.\n\n### Solution:\n```\n# Sort an array with m different types of elements\ndef sort_array(arr):\n    # Get the number of different types of elements \n    m = len(set(arr)) \n    n = len(arr) \n  \n    # Create an output array of size n\n    output = [0] * (n) \n   \n    # Store count of individual numbers in \n    # count array \n    count = [0] * (m) \n    for i in range(0, n): \n        count[arr[i]] += 1\n   \n    # finding cummulative count \n    for i in range(1, m): \n        count[i] += count[i - 1] \n  \n    # Inserting values in sorted array\n    for i in range(n - 1, -1, -1): \n        output[count[arr[i]] - 1] = arr[i] \n        count[arr[i]] -= 1\n   \n    return output \n\n# Driver Code \narr = [2, 1, 1, 3, 6, 4, 5, 5]\nsorted_arr = sort_array(arr) \n  \n# Printing the sorted array \nprint(*sorted_arr)\n```"
+    },
+    {
+        "instruction": "Compose a Python Code to swap two numbers without using a temporary variable.",
+        "output": "# Input two numbers\na = 10\nb = 5\n\n# Swapping using bitwise operator\na = a ^ b \nb = a ^ b \na = a ^ b \n\n# Printing output\nprint(\"a =\", a) \nprint(\"b =\", b)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nCompose a Python Code to swap two numbers without using a temporary variable.\n\n### Solution:\n```\n# Input two numbers\na = 10\nb = 5\n\n# Swapping using bitwise operator\na = a ^ b \nb = a ^ b \na = a ^ b \n\n# Printing output\nprint(\"a =\", a) \nprint(\"b =\", b)\n```"
+    },
+    {
+        "instruction": "Write a Python program to implement a given sorting algorithm",
+        "output": "def insertion_sort(arr):\n    for i in range(1, len(arr)): \n        key = arr[i] \n        j = i-1\n        while j >=0 and key < arr[j] : \n                arr[j+1] = arr[j] \n                j -= 1\n        arr[j+1] = key \n\narr = [9, 8, 7, 6, 5, 4, 3, 2, 1]\ninsertion_sort(arr)",
+        "text": "Generate a python code for the given task description.\n\n### TASK:\nWrite a Python program to implement a given sorting algorithm\n\n### Solution:\n```\ndef insertion_sort(arr):\n    for i in range(1, len(arr)): \n        key = arr[i] \n        j = i-1\n        while j >=0 and key < arr[j] : \n                arr[j+1] = arr[j] \n                j -= 1\n        arr[j+1] = key \n\narr = [9, 8, 7, 6, 5, 4, 3, 2, 1]\ninsertion_sort(arr)\n```"
+    }
+]
