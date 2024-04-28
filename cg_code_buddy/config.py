@@ -5,9 +5,8 @@ import os.path as osp
 ROOT_PATH = osp.abspath(osp.join(__file__, osp.pardir, osp.pardir))
 sys.path.append(ROOT_PATH)
 
-DATA_DIR = os.path.join(ROOT_PATH, 'data')
-LOG_PATH = os.path.join(DATA_DIR, 'logs')
-MODEL_PATH = os.path.join(DATA_DIR, 'ft_models', 'model_d')
+CURR_DIR = os.path.join(ROOT_PATH, 'cg_code_buddy')
+MODEL_PATH = os.path.join(CURR_DIR, 'ft_models', 'model_d')
 
 TITLE_NAME = {'body': '👨‍💻 💬 Code Buddy'}
 CAPTION = '🚀 This is a Python chatbot created by fine-tuning the open-source CodeLlama-7b-hf LLM model.'
